@@ -2,6 +2,11 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{placeins} 
+\usepackage{float}    
+\usepackage{tabularx}
 
 \title{Problem Statement and Goals\\\progname}
 
@@ -83,14 +88,13 @@ The software will be deployed in farm management systems typically used on stand
 \\
 The model will be integrated into CATTLEytics Inc.'s farm management platform, utilizing their existing infrastructure. The model will run within a cloud-based or on-premise system, ensuring smooth integration into the farmers' existing workflow, while maintaining compatibility with the tools they are already using.
 
-\section{Product Goals and Stretch Goals}
 
-\begin{table}[!htbp]
+
+\section{Product Goals}
+
+\begin{table}[H]
 \centering
-\caption{Product Goals and Stretch Goals}
-
-% Product Goals Table
-\begin{tabularx}{\textwidth}{|X|X|}
+\begin{tabularx}{\textwidth}{|p{0.55\textwidth}|p{0.4\textwidth}|} % Boxed table with column widths
 \hline
 \textbf{Goal} & \textbf{Importance} \\ \hline
 The model accurately predicts breeding success rates for individual cows. & This is the core function of the model. Accurate predictions will help farmers improve their breeding programs and overall herd productivity. \\ \hline
@@ -99,20 +103,25 @@ The system integrates seamlessly into CATTLEytics Inc.'s existing platform. & In
 The system offers user-friendly, actionable insights for farmers. & Clear, easy-to-understand outputs will help farmers make informed decisions without needing technical expertise. \\ \hline
 The model processes real-time data to provide up-to-date predictions. & Real-time predictions allow farmers to respond quickly to changes in herd dynamics, preventing potential issues. \\ \hline
 \end{tabularx}
+\end{table}
 
-\vspace{5mm} % Adjust this space to prevent overlapping with the next table
+\FloatBarrier
 
-% Stretch Goals Table
-\begin{tabularx}{\textwidth}{|X|X|}
+\section{Stretch Goals}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|p{0.55\textwidth}|p{0.4\textwidth}|} % Boxed table with column widths
 \hline
 \textbf{Goal} & \textbf{Importance} \\ \hline
 The system includes a feature for predicting long-term health trends of individual cows. & This would enable farmers to anticipate health problems and intervene early, leading to better animal welfare and reduced veterinary costs. \\ \hline
 The model can be customized for different farm sizes and breeds. & Customization increases the model's marketability, allowing it to be adapted to various farm environments and specific herd characteristics. \\ \hline
-The system integrates renewable energy sources for data processing and storage. & Renewable energy use aligns with sustainability goals and makes the system more appealing to environmentally-conscious customers. \\ \hline
 The system offers encrypted data storage and transmission to ensure data security. & Data security is crucial for farmers and companies that handle sensitive herd information. This feature increases trust and protects data integrity. \\ \hline
 \end{tabularx}
-
 \end{table}
+
+\FloatBarrier
+
 
 
 \section{Challenge Level and Extras}
