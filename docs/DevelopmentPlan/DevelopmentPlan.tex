@@ -2,6 +2,7 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{enumitem}
 
 \title{Development Plan\\\progname}
 
@@ -22,7 +23,7 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
+September 22 2023 & Martin Ivanov & Added team member roles and POC demonstration plan\\
 Date2 & Name(s) & Description of changes\\
 ... & ... & ...\\
 \bottomrule
@@ -59,17 +60,42 @@ repo.}
 
 \section{Team Meeting Plan}
 
-\wss{How often will you meet? where?}
+\begin{enumerate}[label=\textbf{\arabic*}]
+    \item \textbf{Frequency of Meetings}
+    \begin{itemize}
+        \item \textbf{Team Meetings}: The team will meet virtually once a week at discussed time, with in-person meetings if required
+        \item \textbf{Industry Supervisor Meetings}: Meetings with the industry supervisor will occur virtually once a week, with additional meetings or cancellations based on the supervisor's availability and project progress.
+        \item \textbf{Additional Meetings}: The team or supervisor may call extra meetings as needed, especially during critical project milestones.
+    \end{itemize}
+    
+    \item \textbf{Meeting Location}
+    \begin{itemize}
+        \item \textbf{Virtual Meetings}: Conducted via platforms Discord or Microsoft Teams.
+        \item \textbf{In-Person Meetings}: Arranged at a mutually agreed location like Mills Memorial Library, H.G. Thode Library and ITB Hallway Space 
+    \end{itemize}
 
-\wss{If the meeting is a physical location (not virtual), out of an abundance of
-caution for safety reasons you shouldn't put the location online}
+    \item \textbf{Meeting Structure}
+    \begin{itemize}
+    \item \textbf{Chair Rotation}: Each team member will take turns chairing the meetings. This includes leading discussions, ensuring the agenda is followed, and managing time.
+    \item \textbf{Agenda}: The chair of the upcoming meeting is responsible for preparing the agenda and circulating it to all members at least \textbf{24 hours prior} to the meeting. The agenda will include:
+    \begin{itemize}
+        \item Project updates
+        \item Task allocation
+        \item Deadlines review
+        \item Challenges and risks
+        \item Next steps
+        \item Supervisor queries (for meetings with the industry advisor)
+    \end{itemize}
+    \end{itemize}
 
-\wss{How often will you meet with your industry advisor?  when?  where?}
+    \item \textbf{Meeting Protocol}
+    \begin{itemize}
+        \item \textbf{Attendance}: All members are expected to attend unless unable, in which case they should inform the members ahead of time.
+        \item \textbf{Minutes}: One team member will be assigned to take minutes, including key decisions, action items, and next steps. Minutes will be shared within \textbf{24 hours} after the meeting on GitHub.
+    \end{itemize}
 
-\wss{Will meetings be virtual?  At least some meetings should likely be
-in-person.}
+\end{enumerate}
 
-\wss{How will the meetings be structured?  There should be a chair for all meetings.  There should be an agenda for all meetings.}
 
 \section{Team Communication Plan}
 
@@ -81,6 +107,14 @@ in-person.}
 leader, meeting chair, reviewer.  Assigning specific people to those roles is
 not necessary at this stage.  In a student team the role of the individuals will
 likely change throughout the year.}
+
+\subsection*{Liaison} Responsible for communicating with the industry supervisor, ensuring that the project is on track, and addressing any concerns or questions from the supervisor.   
+\subsection*{Chair} Responsible for leading meetings, ensuring the agenda is followed, and managing time. Team members will take turns being the chair for each meeting.
+\subsection*{Meeting Minutes} Responsible for taking minutes during meetings, including key decisions, action items, and next steps. Meeting minutes will be taken by a single member at a time, and the member taking minutes will rotate every week.
+\subsection*{Machine Learning Lead} Responsible for leading the machine learning component of the project, including researching machine learning models, and ensuring that the machine learning component meets the requirements.
+\subsection*{Developer} Responsible for developing the project, including coding, testing, and documentation. Developers must ensure that the code produced for the project is of high quality and is well-documented.
+\subsection*{Tester} Responsible for testing the project, including unit testing, integration testing, and system testing. This role will be responsible for ensuring that the project meets the requirements and is free of defects.
+\subsection*{Path to Changing Roles} Team members can change roles based on their interest, availability, and skill set. The team will discuss and decide on role changes as needed. Furthermore, any team member may be asked to help out anywhere else in the system if the need arises. For this reason, it is important that all team members stay up to date with context for what is happening with different parts of the team. Team members may fulfill more than one role at once.
 
 \section{Workflow Plan}
 
@@ -104,9 +138,9 @@ for deadlines.}
 
 \section{Proof of Concept Demonstration Plan}
 
-What is the main risk, or risks, for the success of your project?  What will you
-demonstrate during your proof of concept demonstration to convince yourself that
-you will be able to overcome this risk?
+A few potential challenges that may arise during the course of this project include the availability and quality of historical dairy farm data. While we will be provided with some datasets related to animal health, breeding success, and productivity, these may suffer from inconsistencies, missing values, or lack of relevant features. Our strategy to overcome this involves performing thorough data preprocessing steps to ensure the dataset is suitable for building a reliable model. Additionally, the complexity of predicting outcomes like breeding success or the likelihood of an animal leaving the herd poses a challenge in terms of model accuracy. To address this, we plan to conduct some experiments using various machine learning algorithms to identify the most accurate and robust model for these predictions.
+
+For our POC demonstration in November, we will build a prototype model using a limited dataset that predicts breeding success rates. The POC will include a data pipeline that handles preprocessing steps, a prediction model that outputs breeding success probabilities, and means for displaying the predictions via a dashboard or command line output. This will allow us to demonstrate the viability of the system and our ability to overcome challenges related to data quality and prediction accuracy. In the final product, the model will be scaled to handle more complex data and generate additional insights such as health risks or productivity forecasts, but if the POC can show accurate predictions for a small subset of outcomes, it serves as proof that the system will work for more complex scenarios.
 
 \section{Expected Technology}
 
