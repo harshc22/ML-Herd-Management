@@ -28,6 +28,7 @@ September 22 2024 & Harshpreet Chinjer & Added meeting plan, Expected technology
 September 23 2024 & Martin Ivanov & Added description for the Copyright License section\\
 September 24 2024 & Martin Ivanov & Added Accountability and Teamwork goals to the Appendix\\
 September 24 2024 & Harshpreet Chinjer & Added External goals and Attendance expectations\\
+September 24 2024 & Shazim Rahman & Added IP to protect, team communication plan, and workflow plan\\
 ... & ... & ...\\
 \bottomrule
 \end{tabularx}
@@ -50,11 +51,9 @@ place.}
 
 \wss{For most teams this section will just state that there is no confidential
 information to protect.}
-\section{IP to Protect}
 
-\wss{State whether there is IP to protect.  If there is, point to the agreement.
-All students who are working on a project that requires an IP agreement are also
-required to sign the ``Intellectual Property Guide Acknowledgement.''}
+\section{IP to Protect}
+This project falls entirely under the intellectual property of CATTLEytics. The specific IP agreement has not yet been shared with the team. Once the agreement is provided, this document will be updated to reflect its terms and conditions accordingly.
 
 \section{Copyright License}
 Having discussed with the industry supervisor, the project will be licensed under a proprietary license to protect
@@ -104,7 +103,16 @@ Having discussed with the industry supervisor, the project will be licensed unde
 
 \section{Team Communication Plan}
 
-\wss{Issues on GitHub should be part of your communication plan.}
+\subsection*{GitHub Issues}
+GitHub Issues will serve as the primary platform for task management and project tracking. Each task, whether it pertains to a bug fix, feature implementation, or a request for modification, will be logged as an issue. The team will utilize labels, milestones, and assignees to ensure tasks are categorized and prioritized effectively. This transparent system allows for real-time collaboration, ensuring that all members are informed of current developments, changes, and future features, promoting traceability and accountability across the project lifecycle.
+
+\subsection*{Online Communication}
+For internal team communication, Discord will be the primary medium, fostering collaboration and quick exchanges. Channels will be structured to organize discussions by topics such as development progress, code reviews, and troubleshooting. Discord's voice and text capabilities will facilitate real-time problem-solving, and informal check-ins. This method ensures agility in communication, allowing the team to address and resolve issues promptly as they arise during the development process.
+
+Formal communications with the project supervisor or any external stakeholders will be conducted via email. This ensures a professional tone and provides a record of all significant decisions and updates shared externally. Emails will serve as the official means of sharing reports, progress updates, and seeking feedback or approvals, thus maintaining a clear, documented line of communication with parties outside the core development team.
+
+\subsection*{Weekly Meetings}
+The team will hold weekly meetings to discuss the current progress of the project and review any outstanding tasks. These meetings will focus on assessing the status of ongoing work, resolving any blockers, and assigning new tasks based on priorities. If necessary, older tasks will be migrated or reassigned to reflect changes in project scope or focus. These structured meetings will ensure that the team remains aligned on project goals and timelines.
 
 \section{Team Member Roles}
 
@@ -122,13 +130,39 @@ likely change throughout the year.}
 \subsection*{Path to Changing Roles} Team members can change roles based on their interest, availability, and skill set. The team will discuss and decide on role changes as needed. Furthermore, any team member may be asked to help out anywhere else in the system if the need arises. For this reason, it is important that all team members stay up to date with context for what is happening with different parts of the team. Team members may fulfill more than one role at once.
 
 \section{Workflow Plan}
+Our project will follow a structured Git workflow using two primary persistent branches: \textit{main} and \textit{develop}. The \textit{main} branch will serve as the target for deployment, ensuring that only validated, production-ready code is merged. The \textit{develop} branch will act as the integration branch where all new changes are implemented and tested before they are merged into \textit{main}.
+
+\subsection*{Branching Strategy}
+For any new changes, developers will create a new branch from the \textit{develop} branch. This new branch must be appropriately named to reflect the feature or bug being addressed. All development work and commits will be performed within this branch. When the feature or fix is complete, the developer will push their branch to the remote repository and open a Pull Request (PR) to merge it back into \textit{develop}.
+
+\subsection*{Pull Request Guidelines}
+The PR must be linked to its corresponding GitHub Issue, which will have been labeled accordingly (e.g., bug, enhancement, documentation). Each PR will require at least one team member's approval before it is eligible to be merged. Additionally, the following checks must pass:
 
 \begin{itemize}
-	\item How will you be using git, including branches, pull request, etc.?
-	\item How will you be managing issues, including template issues, issue
-	classification, etc.?
-  \item Use of CI/CD
+    \item All unit and integration tests are successful.
+    \item Linter checks for code quality are successful.
+    \item If changes involve *.tex files, the corresponding *.pdf files must also be updated.
 \end{itemize}
+
+Once these conditions are met and the PR is approved, the developer can proceed with merging the branch into \textit{develop}. After a successful merge, the branch will be automatically deleted, and the linked issue must be closed.
+
+\subsection*{Merging into Main and CI/CD Integration}
+Periodically, the develop branch will be merged into \textit{main}, but only after the code passes comprehensive validation, including integration and system-level tests. GitHub Actions will handle the Continuous Integration/Continuous Deployment (CI/CD) process, ensuring that any validated changes are automatically deployed to the production environment. No changes will be merged directly into \textit{main} outside this process, thus preventing untested code or bugs from reaching production.
+
+\subsection*{GitHub Issue Labels}
+
+To organize and maintain all open and closed issues, each issue must implement one of the provided templates and must be labelled using at least one of the following:
+
+\begin{enumerate}
+    \item \textbf{bug:} Used for tracking issues related to errors or malfunctions in the code.
+    \item \textbf{documentation:} For issues related to writing or updating project documentation.
+    \item \textbf{enhancement:} Indicates requests for new features or improvements to existing ones.
+    \item \textbf{duplicate:} Marks issues that have already been reported and tracked elsewhere.
+    \item \textbf{invalid:} Denotes issues that are not applicable or are irrelevant.
+    \item \textbf{wontfix:} Used for issues that the team has decided not to address.
+    \item \textbf{help wanted:} Signifies a need for additional assistance or contributions.
+    \item \textbf{question:} For inquiries or clarification requests related to the project.
+\end{enumerate}
 
 \section{Project Decomposition and Scheduling}
 
