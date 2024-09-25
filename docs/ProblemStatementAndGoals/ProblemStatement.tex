@@ -2,6 +2,10 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{placeins} 
+\usepackage{float}    
 
 \title{Problem Statement and Goals\\\progname}
 
@@ -22,72 +26,226 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
+Sep/23/2024 & Aryan Patel & Developed Problem Statement and Stretch Goals 
+sections\\
+Sep/23/2024 & Krish Patel & Refined sections Problem Statment, Stretch Goals as 
+well as developed Challenge Level and Extras and Reflection sections\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.} 
-
-\wss{You can change the section headings, as long as you include the required
-information.}
-
 \subsection{Problem}
+
+Dairy farmers face significant challenges in managing the health, productivity,
+and breeding outcomes of their herds. Traditionally, these issues are managed 
+reactively, with farmers responding to problems such as health declines, 
+breeding failures, or unexpected herd turnover after they occur. This reactive 
+approach leads to inefficiencies, financial losses, and reduced herd 
+performance. Our project, in collaboration with CATTLEytics Inc., aims to 
+address these challenges by implementing a machine learning (ML) model capable 
+of predicting breeding success rates and the likelihood of animals leaving the 
+herd based on historical data. This model will help farmers transition from 
+reactive to proactive herd management, improving overall farm productivity and 
+decision-making. The model will integrate with CATTLEytics Inc.'s existing 
+systems, allowing seamless adoption by farmers.
+
+% \wss{You should check your problem statement with the
+% \href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/
+% ProbState-Checklist.pdf}
+% {problem statement checklist}.} 
+
+% \wss{You can change the section headings, as long as you include the required
+% information.}
+
+
 
 \subsection{Inputs and Outputs}
 
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
+\paragraph{Inputs} \ \\
+\\
+The software will use historical herd data related to health, productivity, and 
+breeding outcomes. This data may include metrics such as individual animal 
+health records, breeding attempts, and farm-specific environmental conditions. 
+The input data will be fed into a machine learning model to generate 
+predictions.
+
+\paragraph{Outputs} \ \\
+\\
+The output will consist of predictive insights aimed at improving farm 
+management. These will include:
+\begin{enumerate}
+    \item Predictions about the success of breeding attempts for individual 
+    animals.
+    \item The likelihood of an animal leaving the herd.
+    \item Alerts about potential health issues or productivity declines.
+\end{enumerate}
+
+The software will provide clear, actionable outputs to guide decision-making, 
+presented in a format easily interpretable by farmers and other stakeholders.
+
+
 
 \subsection{Stakeholders}
 
+\begin{enumerate}
+    \item \textbf{Farmers:} The primary users of the software, who will benefit 
+    from improved herd management and decision-making.
+    \item \textbf{CATTLEytics Inc.:} The company that will deploy the software 
+    to its customers and provide ongoing support.
+    \item \textbf{Animal Health Experts:} Professionals who may use the 
+    software to provide advice to farmers based on the predictive insights 
+    generated.
+    \item \textbf{Regulatory Bodies:} Organizations that may use the software 
+    to monitor herd health and productivity.
+    \item \textbf{Dairy Production Companies:} Organizations that may use the 
+    software to optimize their supply chain and production processes.
+\end{enumerate}
+
+
 \subsection{Environment}
 
-\wss{Hardware and software environment}
+\paragraph{Hardware} \ \\
+\\
+The software will be deployed in farm management systems typically used on 
+standard personal computers or servers. These systems may also interact with 
+IoT devices used for real-time data collection on farms.
+\paragraph{Software} \ \\
+\\
+The model will be integrated into CATTLEytics Inc.'s farm management platform,
+leveraging their existing infrastructure. It will seamlessly integrate into 
+the farmers' existing workflow, ensuring compatibility with the tools and 
+systems they are already using.
 
-\section{Goals}
+\section{Product Goals}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|p{0.55\textwidth}|p{0.4\textwidth}|}
+\hline
+\textbf{Goal} & \textbf{Importance} \\ \hline
+The model accurately predicts breeding success rates for individual cows. & The 
+accuracy of predictions can be measured by comparing the predicted success 
+rates with actual outcomes over a defined period (e.g., a breeding cycle). A 
+target accuracy rate, such as 80-90\%, can be established to define success. \\ 
+\hline
+The model provides predictions on the likelihood of an animal leaving the 
+herd. & This can be measured by tracking the model's predictions against actual 
+herd turnover rates. A success threshold (e.g., 75\% accuracy or better) for 
+predicting cows that will leave the herd within a specified time frame can be 
+set. \\ \hline
+The system integrates seamlessly into CATTLEytics Inc.'s existing platform. & 
+Success can be measured by the time taken to complete the integration and the 
+absence of major system disruptions post-integration (e.g., within a 1-month 
+test period, there should be less than 1\% downtime or user-reported issues). 
+\\ \hline
+The system offers user-friendly, actionable insights for farmers. & 
+User-friendliness can be measured through user feedback surveys 
+post-implementation, focusing on ease of use and clarity of insights. A target 
+of 80\% or more of users rating the insights as “clear” or “actionable” can be 
+set as a measurable goal. \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\FloatBarrier
 
 \section{Stretch Goals}
 
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|p{0.55\textwidth}|p{0.4\textwidth}|} 
+% Boxed table with column widths
+\hline
+\textbf{Goal} & \textbf{Importance} \\ \hline
+The model processes real-time data to provide up-to-date predictions. & 
+Real-time predictions allow farmers to respond quickly to changes in herd 
+dynamics, preventing potential issues. \\ \hline
+The system includes a feature for predicting long-term health trends of 
+individual cows. & This would enable farmers to anticipate health problems and 
+intervene early, leading to better animal welfare and reduced veterinary costs. 
+\\ \hline
+The model can be customized for different farm sizes and breeds. & 
+Customization increases the model's marketability, allowing it to be adapted to 
+various farm environments and specific herd characteristics. \\ \hline
+The system offers encrypted data storage and transmission to ensure data 
+security. & Data security is crucial for farmers and companies that handle 
+sensitive herd information. This feature increases trust and protects data 
+integrity. \\ \hline
+\end{tabularx}
+\end{table}
+
+\FloatBarrier
+
 \section{Challenge Level and Extras}
 
-\wss{State your expected challenge level (advanced, general or basic).  The
-challenge can come through the required domain knowledge, the implementation or
-something else.  Usually the greater the novelty of a project the greater its
-challenge level.  You should include your rationale for the selected level.
-Approval of the level will be part of the discussion with the instructor for
-approving the project.  The challenge level, with the approval (or request) of
-the instructor, can be modified over the course of the term.}
+The challenge level for this project is general. The project requires applying
+machine learning techniques to real-world problems in dairy agriculture. This
+requires a solid understanding of software engineering principles and machine
+learning concepts. It also demonstrates the ability to integrate multiple
+domains, such as software development, data analysis, and some domain-specific
+knowledge in agriculture. An additional challenge lies in developing 
+user-friendly interface and/or application that allows farmers and researches
+to interact with the ML model. 
 
-\wss{Teams may wish to include extras as either potential bonus grades, or to
-make up for a less advanced challenge level.  Potential extras include usability
-testing, code walkthroughs, user documentation, formal proof, GenderMag
-personas, Design Thinking, etc.  Normally the maximum number of extras will be
-two.  Approval of the extras will be part of the discussion with the instructor
-for approving the project.  The extras, with the approval (or request) of the
-instructor, can be modified over the course of the term.}
+Additionally, we seek to add benchmarking, specifically for various ML 
+algorithms, extensive documentation, and incorporate usability testing
+for our Extras. 
+
 
 \newpage{}
 
 \section*{Appendix --- Reflection}
 
-\wss{Not required for CAS 741}
 
-\input{../Reflection.tex}
+\textbf{What went well while writing this deliverable?} \\
+Our team collaborated effectively during the process. Prior to meetings, we 
+engaged in discussions, that allowed for the fair allocation of work. This
+resulted in a smooth workflow, where each member was prepared to contribute. 
+Additionally, the quality of the work produced aligned well with the rubric, 
+which boosted our confidence that the deliverable would meet course 
+expectations.
 
-\begin{enumerate}
-    \item What went well while writing this deliverable? 
-    \item What pain points did you experience during this deliverable, and how
-    did you resolve them?
-    \item How did you and your team adjust the scope of your goals to ensure
-    they are suitable for a Capstone project (not overly ambitious but also of
-    appropriate complexity for a senior design project)?
-\end{enumerate}  
+One of the major successes was establishing goals after discussions with 
+CATTLEytics Inc. stakeholders. These discussions not only clarified the problem 
+we are solving but also led to valuable insights into metrics needed to track 
+our model's success. This deliverable opened up several points for further 
+exploration, including additional work we may need to consider and 
+how we would evaluate the performance of our system. \\
+
+
+\textbf{What pain points did you experience during this deliverable, and how
+did you resolve them?} \\
+One significant challenge we encountered was understanding the domain knowledge 
+specific to dairy farming and herd management. Since none of us had direct 
+experience in this area, it was initially difficult to determine how we could 
+effectively measure the success of the machine learning system we are building. 
+We addressed this issue by having in-depth discussions with the stakeholders at 
+CATTLEytics Inc., who helped clarify the domain requirements and provided key 
+insights on success metrics.
+
+Another pain point was developing stretch goals. On paper, the system followed 
+a fairly straightforward process, which made it challenging to come up with 
+additional features that would provide significant value. We resolved this by 
+brainstorming ways to extend the system's capabilities, such as real-time data 
+processing and customization for different farm sizes or breeds, to align with 
+the broader goals of improving herd management. \\
+
+
+\textbf{How did you and your team adjust the scope of your goals to ensure
+they are suitable for a Capstone project (not overly ambitious but also of
+appropriate complexity for a senior design project)?} \\
+Initially, we felt the project might be too straightforward for a 
+Capstone-level endeavor. To address this, we refined our scope by incorporating 
+stretch goals that would leverage our prior experience while ensuring we didn't 
+overextend ourselves. These stretch goals allowed us to expand the project's 
+technical depth without deviating from its core objectives. We also carefully 
+considered the complexities of working with both ML technologies and the dairy 
+agriculture sector, factoring in the unique challenges posed by each when 
+defining both our immediate goals and stretch targets. This approach helped 
+ensure the project maintained a suitable level of complexity while remaining 
+feasible.
 
 \end{document}
