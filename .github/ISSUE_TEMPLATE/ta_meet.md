@@ -13,11 +13,11 @@ assignees: ''
 
 **Attendance**
 
-- [ ] team member1
-- [ ] team member2
-- [ ] team member3
-- [ ] team member4
-- [ ] team member5
+- [ ] Aryan Patel
+- [ ] Harshpreet Chinjer
+- [ ] Krish Patel
+- [ ] Martin Ivanov
+- [ ] Shazim Rahman
 
 **Questions to Ask**
 
