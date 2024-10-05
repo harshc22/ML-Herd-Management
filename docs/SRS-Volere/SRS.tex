@@ -108,19 +108,104 @@ involved in the Project}
 
 \section{The Scope of the Work}
 \subsection{The Current Situation}
-\lips
+The current state of dairy farming presents challenges in efficiently predicting
+the health, productivity, and breeding outcomes of cattle. Farmers typically rely 
+on historical records, but the analysis is done manually, often leading to 
+reactive management. The existing systems do not utilize advanced technologies 
+such as machine learning for predictive analytics. As a result, there is limited 
+proactive management regarding milk production, breeding success, and herd longevity, 
+which directly impacts farm profitability and sustainability.
+
+The current solution environment lacks integration of large datasets from multiple 
+sources, such as individual cow health records, breeding history, and environmental 
+conditions, into a single system that can offer actionable predictions.
 \subsection{The Context of the Work}
-\lips
+This project aims to develop a machine learning model that will leverage 
+historical herd data to predict important traits such as milk yield, breeding 
+success rates, and the likelihood of a cow leaving the herd. This model will be 
+integrated into a farm management system, providing farmers with actionable 
+insights. The goal is to move from reactive to proactive herd management.
+
+The model will use data such as the health, breed, and genetic history of both 
+the mother and father to predict traits in calves. The software will be 
+developed as part of a partnership with CATTLEytics Inc., ensuring seamless 
+integration into their existing platform used by dairy farmers.
 \subsection{Work Partitioning}
-\lips
+The project will be divided into several key components:
+
+\begin{enumerate}
+    \item \textbf{Data Collection and Preprocessing:}
+    \begin{itemize}
+        \item Collection of historical data from existing systems, including 
+        cow health records, breeding data, and productivity metrics.
+        \item Cleaning and standardizing the data for input into the machine 
+        learning model.
+    \end{itemize}
+
+    \item \textbf{Model Development:}
+    \begin{itemize}
+        \item Designing and implementing the machine learning model for trait 
+        prediction (e.g., milk production, herd retention).
+        \item Training and validating the model on historical datasets.
+        \item Iterative testing and refinement.
+    \end{itemize}
+
+    \item \textbf{Integration:}
+    \begin{itemize}
+        \item Integrating the prediction model into the CATTLEytics farm 
+        management system.
+        \item Ensuring that outputs are presented in a user-friendly format 
+        for farmers to make decisions.
+    \end{itemize}
+
+    \item \textbf{Testing and Validation:}
+    \begin{itemize}
+        \item Testing the software in real-world farm environments to validate 
+        predictions and refine the user interface.
+    \end{itemize}
+
+    \item \textbf{Documentation and Training:}
+    \begin{itemize}
+        \item Providing clear documentation for users and training for farmers 
+        to effectively use the system.
+    \end{itemize}
+\end{enumerate}
 \subsection{Specifying a Business Use Case (BUC)}
-\lips
+\subsection{Specifying a Business Use Case (BUC)}
+
+\textbf{Title:} Predicting Cow Traits for Optimized Herd Management
+
+\textbf{Primary Actor:} Dairy farmer using the CATTLEytics system.
+
+\textbf{Precondition:} The farmer has access to a herd management system 
+integrated with the prediction model. Historical data on breeding, milk 
+production, and herd turnover are available.
+
+\textbf{Trigger:} The farmer initiates the model to predict the outcomes of a 
+planned breeding or evaluates the likelihood of an existing cow leaving the herd.
+
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item The farmer selects cows for breeding and inputs the necessary data 
+    (e.g., parent traits).
+    \item The system processes the input and returns predictions for milk yield 
+    and herd retention likelihood.
+    \item Based on the model's predictions, the farmer makes informed decisions 
+    on breeding strategies or management actions to prevent herd loss.
+\end{enumerate}
+
+\textbf{Postconditions:}
+\begin{itemize}
+    \item The farmer has actionable insights to improve herd productivity and 
+    manage herd turnover proactively.
+\end{itemize}
+
 
 \section{Business Data Model and Data Dictionary}
 \subsection{Business Data Model}
-\lips
+This section will be completed once the relevant data model details are available.
 \subsection{Data Dictionary}
-\lips
+This section will be completed once the relevant data model details are available.
 
 \section{The Scope of the Product}
 \subsection{Product Boundary}
