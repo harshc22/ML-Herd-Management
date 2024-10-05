@@ -119,28 +119,7 @@ which directly impacts farm profitability and sustainability.
 The current solution environment lacks integration of large datasets from multiple 
 sources, such as individual cow health records, breeding history, and environmental 
 conditions, into a single system that can offer actionable predictions.
-The current state of dairy farming presents challenges in efficiently predicting
-the health, productivity, and breeding outcomes of cattle. Farmers typically rely 
-on historical records, but the analysis is done manually, often leading to 
-reactive management. The existing systems do not utilize advanced technologies 
-such as machine learning for predictive analytics. As a result, there is limited 
-proactive management regarding milk production, breeding success, and herd longevity, 
-which directly impacts farm profitability and sustainability.
-
-The current solution environment lacks integration of large datasets from multiple 
-sources, such as individual cow health records, breeding history, and environmental 
-conditions, into a single system that can offer actionable predictions.
 \subsection{The Context of the Work}
-This project aims to develop a machine learning model that will leverage 
-historical herd data to predict important traits such as milk yield, breeding 
-success rates, and the likelihood of a cow leaving the herd. This model will be 
-integrated into a farm management system, providing farmers with actionable 
-insights. The goal is to move from reactive to proactive herd management.
-
-The model will use data such as the health, breed, and genetic history of both 
-the mother and father to predict traits in calves. The software will be 
-developed as part of a partnership with CATTLEytics Inc., ensuring seamless 
-integration into their existing platform used by dairy farmers.
 This project aims to develop a machine learning model that will leverage 
 historical herd data to predict important traits such as milk yield, breeding 
 success rates, and the likelihood of a cow leaving the herd. This model will be 
@@ -192,7 +171,34 @@ The project will be divided into several key components:
     \end{itemize}
 \end{enumerate}
 \subsection{Specifying a Business Use Case (BUC)}
-\subsection{Specifying a Business Use Case (BUC)}
+
+\textbf{Title:} Predicting Cow Traits for Optimized Herd Management
+
+\textbf{Primary Actor:} Dairy farmer using the CATTLEytics system.
+
+\textbf{Precondition:} The farmer has access to a herd management system 
+integrated with the prediction model. Historical data on breeding, milk 
+production, and herd turnover are available.
+
+\textbf{Trigger:} The farmer initiates the model to predict the outcomes of a 
+planned breeding or evaluates the likelihood of an existing cow leaving the herd.
+
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item The farmer selects cows for breeding and inputs the necessary data 
+    (e.g., parent traits).
+    \item The system processes the input and returns predictions for milk yield 
+    and herd retention likelihood.
+    \item Based on the model's predictions, the farmer makes informed decisions 
+    on breeding strategies or management actions to prevent herd loss.
+\end{enumerate}
+
+\textbf{Postconditions:}
+\begin{itemize}
+    \item The farmer has actionable insights to improve herd productivity and 
+    manage herd turnover proactively.
+\end{itemize}
+
 
 \textbf{Title:} Predicting Cow Traits for Optimized Herd Management
 
@@ -225,16 +231,24 @@ planned breeding or evaluates the likelihood of an existing cow leaving the herd
 \section{Business Data Model and Data Dictionary}
 \subsection{Business Data Model}
 This section will be completed once the relevant data model details are available.
-This section will be completed once the relevant data model details are available.
 \subsection{Data Dictionary}
 This section will be completed once the relevant data model details are available.
 
+% \section{The Scope of the Product}
+% \subsection{Product Boundary}
+% \lips
+% \subsection{Product Use Case Table}
+% \lips
+% \subsection{Individual Product Use Cases (PUC's)}
+% \lips
+
 \section{The Scope of the Product}
+
 
 \subsection{Product Boundary}
 The product's primary function is to predict cow traits such as milk production, 
 breeding success, and herd retention based on parental data. The machine learning 
-model will integrate into a platform like CATTLEytics Inc., and its 
+model will integrate into a platform like CATTLEytics, and its 
 boundaries will include:
 
 \begin{itemize}
@@ -248,11 +262,14 @@ boundaries will include:
 \end{itemize}
 
 This product will focus solely on predictive analytics based on historical data 
-and will not handle aspects like external raw data collection or advanced herd management 
+and will not handle aspects like data collection or advanced herd management 
 automation beyond providing insights.
 
 \subsection{Product Use Case Table}
-This table outlines the core use cases currently identified for the product.
+This table outlines the core use cases currently identified for the product, 
+based on available information.
+
+
 
 \begin{table}[h!]
 \centering
@@ -274,6 +291,59 @@ This table outlines the core use cases currently identified for the product.
 
 
 \subsection{Individual Product Use Cases (PUC's)}
+
+\subsubsection{PUC1: Predict Breeding Success}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Farmer has historical data about cow and 
+    parental traits available for input.
+    \item \textbf{Trigger}: The farmer initiates a request to predict 
+    breeding success.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer enters relevant breeding data.
+        \item The system processes the input using historical records.
+        \item A prediction is generated on the likelihood of breeding success.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer gets an actionable prediction 
+    to decide whether to proceed with the breeding.
+\end{itemize}
+
+\subsubsection{PUC2: Forecast Milk Production}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Historical data for milk production and 
+    parental traits is available for input.
+    \item \textbf{Trigger}: The farmer requests a prediction for future milk 
+    production.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer inputs the cow's data.
+        \item The system processes the input data.
+        \item A prediction on future milk production is generated.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives a prediction that helps 
+    in planning milk yield expectations.
+\end{itemize}
+
+\subsubsection{PUC3: Predict Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Health and productivity data is available 
+    for the cows in question.
+    \item \textbf{Trigger}: The farmer requests predictions on herd retention 
+    likelihood.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer selects a cow or group of cows for analysis.
+        \item The system processes the available data.
+        \item A prediction is generated on whether the cows are likely to stay 
+        in or leave the herd.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives predictions to assist in 
+    managing herd turnover.
+\end{itemize}
+
 
 \subsubsection{PUC1: Predict Breeding Success}
 \begin{itemize}
