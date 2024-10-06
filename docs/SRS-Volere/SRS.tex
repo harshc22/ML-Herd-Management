@@ -401,6 +401,92 @@ based on available information.
     without errors in data transmission.
 \end{itemize}
 
+\subsection{Formal Specification}
+
+\textbf{Specification 1: Breeding Success Prediction}
+\begin{itemize}
+    \item \textbf{Description}: The system must be able to predict the likelihood 
+    of breeding success between two cows based on historical data, such as 
+    parental traits and previous breeding records.
+    \item \textbf{Formal Specification}: \\
+    Let \( X \) represent a breeding event. \\
+    Let \( Y \) represent the set of all possible breeding events. \\
+    Let \( P \) represent the predicted probability of success.
+    
+    \[
+    \forall X \in Y : \text{Prediction}(X) \rightarrow P \in [0, 1]
+    \]
+    
+    The system shall compute the probability \( P \) for each breeding event \( X \).
+\end{itemize}
+
+\textbf{Specification 2: Milk Production Forecast}
+\begin{itemize}
+    \item \textbf{Description}: The system shall forecast future milk production 
+    for a given cow based on historical data of both the cow and its parents.
+    \item \textbf{Formal Specification}: \\
+    Let \( C \) represent a cow in the herd. \\
+    Let \( Y \) represent historical milk production data. \\
+    
+    \[
+    \forall C : \text{Forecast}(C, Y) \rightarrow \text{PredictedMilkProduction}(C)
+    \]
+    
+    The system shall provide a forecast of future milk production for each 
+    cow \( C \) based on input data \( Y \).
+\end{itemize}
+
+\textbf{Specification 3: Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Description}: The system must predict the likelihood of a cow 
+    staying within or leaving the herd, based on its health, productivity, 
+    and historical data.
+    \item \textbf{Formal Specification}: \\
+    Let \( H \) represent a cow's health record. \\
+    Let \( P \) represent the predicted probability of retention.
+    
+    \[
+    \forall H : \text{RetentionPrediction}(H) \rightarrow P \in [0, 1]
+    \]
+    
+    The system shall compute the retention probability \( P \) for each cow 
+    based on its health records and other historical data.
+\end{itemize}
+
+\textbf{Specification 4: Data Input Validation}
+\begin{itemize}
+    \item \textbf{Description}: The system must validate the input data for 
+    cows and breeding events to ensure it is accurate and complete before 
+    generating predictions.
+    \item \textbf{Formal Specification}:
+    Let $D$ represent the input data for a cow or breeding event.
+    
+    $\forall D : \text{InputValid}(D) = 
+    \left\{
+    \begin{array}{ll}
+      \text{True} & \text{if data passes validation checks} \\
+      \text{False} & \text{otherwise}
+    \end{array}
+    \right.$
+    
+    The system must ensure that all data $D$ is valid before processing 
+    it for predictions.
+\end{itemize}
+
+\textbf{Specification 5: Report Generation (TBD)}
+\begin{itemize}
+    \item \textbf{Description}: The system must generate a report summarizing 
+    predictions for breeding success, milk production, and herd retention likelihood.
+    \item \textbf{Formal Specification}: \\
+    Let \( R \) represent the report generated. \\
+    \[
+    \forall P, C : \text{GenerateReport}(P, C) \rightarrow R
+    \]
+    The system shall generate a report \( R \) based on the predictions \( P \) and input data \( C \).
+\end{itemize}
+
+
+
 
 \section{Look and Feel Requirements}
 \subsection{Appearance Requirements}
