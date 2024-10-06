@@ -19,7 +19,6 @@
 }
 
 \newcommand{\lips}{\textit{Insert your content here.}}
-\newcommand{\rname}[1]{\mbox{#1}}
 
 \input{../Comments}
 \input{../Common}
@@ -535,7 +534,7 @@ This table outlines the core use cases currently identified for the product.
     Let \( P \) represent the predicted probability of success.
     
     \[
-    \forall X \in Y : \text{Prediction}(X) \rightarrow P \in [0, 1]
+    \forall X \in Y : \textrm{Prediction}(X) \rightarrow P \in [0, 1]
     \]
     
     The system shall compute the probability \( P \) for each breeding event \( X \).
@@ -550,7 +549,7 @@ This table outlines the core use cases currently identified for the product.
     Let \( Y \) represent historical milk production data. \\
     
     \[
-    \forall C : \text{Forecast}(C, Y) \rightarrow \text{PredictedMilkProduction}(C)
+    \forall C : \textrm{Forecast}(C, Y) \rightarrow \textrm{PredictedMilkProduction}(C)
     \]
     
     The system shall provide a forecast of future milk production for each 
@@ -567,7 +566,7 @@ This table outlines the core use cases currently identified for the product.
     Let \( P \) represent the predicted probability of retention.
     
     \[
-    \forall H : \text{RetentionPrediction}(H) \rightarrow P \in [0, 1]
+    \forall H : \textrm{RetentionPrediction}(H) \rightarrow P \in [0, 1]
     \]
     
     The system shall compute the retention probability \( P \) for each cow 
@@ -582,11 +581,11 @@ This table outlines the core use cases currently identified for the product.
     \item \textbf{Formal Specification}:
     Let $D$ represent the input data for a cow or breeding event.
     
-    $\forall D : \text{InputValid}(D) = 
+    $\forall D : \textrm{InputValid}(D) = 
     \left\{
     \begin{array}{ll}
-      \text{True} & \rname{if data passes validation checks} \\
-      \text{False} & \rname{otherwise}
+      \textrm{True} & \textrm{if data passes validation checks} \\
+      \textrm{False} & \textrm{otherwise}
     \end{array}
     \right.$
     
@@ -601,7 +600,7 @@ This table outlines the core use cases currently identified for the product.
     \item \textbf{Formal Specification}: \\
     Let \( R \) represent the report generated. \\
     \[
-    \forall P, C : \text{GenerateReport}(P, C) \rightarrow R
+    \forall P, C : \textrm{GenerateReport}(P, C) \rightarrow R
     \]
     The system shall generate a report \( R \) based on the predictions \( P \) and input data \( C \).
 \end{itemize}
