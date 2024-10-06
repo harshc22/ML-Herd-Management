@@ -203,118 +203,139 @@ involved in the Project}
 \section{Cultural Requirements}
 \subsection{Cultural Requirements}
 \begin{itemize}
-  \item The primary language for the product will be English, tailored
-  specifically to Canadian dairy farmers. 
-  \item All data and measurements will follow Canadian standards, including the
-  use of liters for milk production, kilograms for weight, and hectares for land
-  area Other relevant units such as Celsius for temperature and metric tons for
-  larger quantities may also be used
+	\item The primary language for the product will be English, tailored
+	      specifically to Canadian dairy farmers. 
+	\item All data and measurements will follow Canadian standards, including the
+	      use of liters for milk production, kilograms for weight, and hectares
+	      for land area Other relevant units such as Celsius for temperature and
+	      metric tons for larger quantities may also be used
 \end{itemize}
 
 \section{Compliance Requirements}
 \subsection{Legal Requirements}
 \begin{itemize}
-  \item The project must comply with the \href{https://www.nfacc.ca/codes-of-practice/dairy-cattle}{Code of Practice for the Care and Handling of Dairy Cattle}, which is a government-regulated standard in Canada. This code outlines mandatory guidelines for the ethical treatment, health, and welfare of dairy cattle. Any management recommendations or actions suggested by the machine learning model will align with these regulations to ensure ethical practices in dairy farming.
-  \item The project must comply with
-  \href{https://laws-lois.justice.gc.ca/pdf/p-8.6.pdf}{PIPEDA} (Personal
-  Information Protection and Electronic Documents Act) for any personal
-  information related to dairy farmers or other individuals involved. This
-  includes the handling of contact details, financial information, and other
-  personally identifiable data.
+	\item The project must comply with the
+	      \href{https://www.nfacc.ca/codes-of-practice/dairy-cattle}{Code of
+	      Practice for the Care and Handling of Dairy Cattle}, which is a
+	      government-regulated standard in Canada. This code outlines mandatory
+	      guidelines for the ethical treatment, health, and welfare of dairy
+	      cattle. Any management recommendations or actions suggested by the
+	      machine learning model will align with these regulations to ensure
+	      ethical practices in dairy farming.
+	        
+	\item The project must comply with
+	      \href{https://laws-lois.justice.gc.ca/pdf/p-8.6.pdf}{PIPEDA} (Personal
+	      Information Protection and Electronic Documents Act) for any personal
+	      information related to dairy farmers or other individuals involved. This
+	      includes the handling of contact details, financial information, and
+	      other personally identifiable data.
 \end{itemize}
 \subsection{Standards Compliance Requirements}
-\lips
+\begin{itemize}
+	\item There are no specific standards for collecting dairy farming data in
+	      this project. All relevant aspects of data collection and handling are
+	      already covered under Legal Requirements, specifically in compliance
+	      with PIPEDA for managing sensitive information about dairy farmers, and
+	      the Code of Practice for the Care and Handling of Dairy Cattle for
+	      ensuring the welfare of the animals.
+	\item For coding standards, the project will adhere to PEP8 to ensure
+	      consistent and readable Python code. More information on PEP8 can be
+	      found \href{https://peps.python.org/pep-0008/}{here}.
+\end{itemize}
 
 \section{Open Issues}
 \begin{itemize}
-  \item \textbf{Data Availability and Quality:} The accuracy of predictions will
-  heavily depend on the quality and completeness of the data obtained from
-  CATTLEytics and Lactanet. Inconsistent or missing data might affect the
-  performance of the model.
-
-  \item \textbf{Model Accuracy:} The machine learning model may need to be
-  fine-tuned multiple times to achieve high accuracy in predicting cow traits.
-  This requires testing with diverse datasets to ensure the model generalizes
-  well.
-
-  \item \textbf{User Interface Usability:} The graphical representation of the
-  family tree and predicted traits needs to be intuitive and user-friendly for
-  farmers with varying levels of technical skill. Determining the best design
-  and ensuring it meets users' needs could take time.
-
-  \item \textbf{Integration with CATTLEytics:} Seamlessly integrating the tool
-  into the existing CATTLEytics system without causing disruptions or requiring
-  major system changes could be technically challenging.
-
-  \item \textbf{Regulatory Compliance:} Ensuring that the predictions and
-  recommendations made by the model comply with Canadian regulations for dairy
-  farming (Code of Practice for the Care and Handling of Dairy Cattle) will
-  require thorough review and potential adjustments during development.
-
-  \item \textbf{Model Interpretability:} Farmers may need clear explanations for
-  how predictions are made to trust and use the tool effectively. Ensuring the
-  model’s predictions are explainable is an open issue.
-  
-  \item \textbf{Performance Considerations:} The tool needs to be efficient and
-  scalable, handling large amounts of data without significant lag or
-  performance issues, especially as it gets adopted by multiple farms.
+	\item \textbf{Data Availability and Quality:} The accuracy of predictions will
+	      heavily depend on the quality and completeness of the data obtained from
+	      CATTLEytics and Lactanet. Inconsistent or missing data might affect the
+	      performance of the model.
+	      
+	\item \textbf{Model Accuracy:} The machine learning model may need to be
+	      fine-tuned multiple times to achieve high accuracy in predicting cow
+	      traits. This requires testing with diverse datasets to ensure the model
+	      generalizes well.
+	      
+	\item \textbf{User Interface Usability:} The graphical representation of the
+	      family tree and predicted traits needs to be intuitive and user-friendly
+	      for farmers with varying levels of technical skill. Determining the best
+	      design and ensuring it meets users' needs could take time.
+	      
+	\item \textbf{Integration with CATTLEytics:} Seamlessly integrating the tool
+	      into the existing CATTLEytics system without causing disruptions or
+	      requiring major system changes could be technically challenging.
+	      
+	\item \textbf{Regulatory Compliance:} Ensuring that the predictions and
+	      recommendations made by the model comply with Canadian regulations for
+	      dairy farming (Code of Practice for the Care and Handling of Dairy
+	      Cattle) will require thorough review and potential adjustments during
+	      development.
+	      
+	\item \textbf{Model Interpretability:} Farmers may need clear explanations for
+	      how predictions are made to trust and use the tool effectively. Ensuring
+	      the model’s predictions are explainable is an open issue.
+	      
+	\item \textbf{Performance Considerations:} The tool needs to be efficient and
+	      scalable, handling large amounts of data without significant lag or
+	      performance issues, especially as it gets adopted by multiple farms.
 \end{itemize}
 
 \section{Off-the-Shelf Solutions}
 \subsection{Ready-Made Products}
 \begin{itemize}
-  \item There are no fully ready-made products that address the predictive
-  capabilities being developed in this project. While tools like Lactanet
-  provide dairy farm data, they do not offer predictive models based on genetic
-  and health data. Lactanet data will be used primarily for training the custom
-  machine learning model.
+	\item There are no fully ready-made products that address the predictive
+	      capabilities being developed in this project. While tools like Lactanet
+	      provide dairy farm data, they do not offer predictive models based on
+	      genetic and health data. Lactanet data will be used primarily for
+	      training the custom machine learning model.
 \end{itemize}
 \subsection{Reusable Components}
 \begin{itemize}
-  \item Machine learning libraries, such as PyTorch or TensorFlow, will be
-  utilized to develop the custom AI model for cow trait prediction.
-  Additionally, front-end libraries such as D3.js or React Tree Visualization
-  libraries could be considered for visualizing the family-tree diagrams.
+	\item Machine learning libraries, such as PyTorch or TensorFlow, will be
+	      utilized to develop the custom AI model for cow trait prediction.
+	      Additionally, front-end libraries such as D3.js or React Tree
+	      Visualization libraries could be considered for visualizing the
+	      family-tree diagrams.
 \end{itemize}
 \subsection{Products That Can Be Copied}
 \begin{itemize}
-  \item There are no existing products to be copied for this project. However,
-  open-source family-tree visualization tools might serve as inspiration for the
-  graphical aspects of the project.
+	\item There are no existing products to be copied for this project. However,
+	      open-source family-tree visualization tools might serve as inspiration
+	      for the graphical aspects of the project.
 \end{itemize}
 
 \section{New Problems}
 \subsection{Effects on the Current Environment}
 \begin{itemize}
-  \item Introducing this system could change how farmers currently select sires
-  or evaluate herd performance. Some may resist adopting new technology due to
-  unfamiliarity.
+	\item Introducing this system could change how farmers currently select sires
+	      or evaluate herd performance. Some may resist adopting new technology
+	      due to unfamiliarity.
 \end{itemize}
 \subsection{Effects on the Installed Systems}
 \begin{itemize}
-  \item The project will be integrated into the existing Cattleytics
-  software, which is already used to manage dairy farms. The machine learning
-  tool will act as an additional module within Cattleytics, allowing farmers to
-  visualize the family tree of cows and predict future traits based on genetic
-  data. Seamless integration with the current system will be prioritized to
-  ensure smooth adoption and ease of use.
+	\item The project will be integrated into the existing Cattleytics software,
+	      which is already used to manage dairy farms. The machine learning tool
+	      will act as an additional module within Cattleytics, allowing farmers to
+	      visualize the family tree of cows and predict future traits based on
+	      genetic data. Seamless integration with the current system will be
+	      prioritized to ensure smooth adoption and ease of use.
 \end{itemize}
 \subsection{Potential User Problems}
 \begin{itemize}
-  \item Users may face difficulties interpreting complex AI model outputs, so
-  ensuring the tool’s recommendations are easy to understand is key.
+	\item Users may face difficulties interpreting complex AI model outputs, so
+	      ensuring the tool’s recommendations are easy to understand is key.
 \end{itemize}
 \subsection{Limitations in the Anticipated Implementation Environment That May
 Inhibit the New Product}
 \begin{itemize}
-  \item The tool will need to function effectively on standard farm computing
-  systems, which may have limited processing power or internet connectivity.
+	\item The tool will need to function effectively on standard farm computing
+	      systems, which may have limited processing power or internet
+	      connectivity.
 \end{itemize}
 \subsection{Follow-Up Problems}
 \begin{itemize}
-  \item Continuous updates may be needed to improve the model based on feedback
-  from farmers. Future updates may also need to address changes in farming
-  practices
+	\item Continuous updates may be needed to improve the model based on feedback
+	      from farmers. Future updates may also need to address changes in farming
+	      practices
 \end{itemize}
 
 \section{Tasks}
