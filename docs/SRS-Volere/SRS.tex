@@ -855,7 +855,83 @@ in the SFWRENG 4G06 course outline.
 
 	\label{project_tasks}
 \end{table}
+
 \subsection{Planning of the Development Phases}
+The development of the project will be conducted in four primary phases:
+
+\textbf{1. Data Acquisition and Initial Integration:} This initial phase focuses
+on acquiring, cleaning, and integrating historical dairy farm data into the
+system. Activities include:
+\begin{itemize}
+    \item Collecting and preprocessing datasets from CATTLEytics and Lactanet to
+    ensure data quality and consistency.
+    \item Developing scripts to handle data normalization, unit conversion
+    (e.g., to liters and kilograms), and encryption for compliance with PIPEDA.
+    \item Implementing an initial data pipeline to allow seamless integration
+    between the existing CATTLEytics system and the new module.
+\end{itemize}
+This phase will conclude with a Proof of Concept (POC) demonstration, where the
+pipeline and initial data handling capabilities will be validated.
+
+\textbf{2. Development of Predictive Model and Core Functionality:} The second
+phase is dedicated to developing and integrating the core machine learning model
+responsible for predicting key outcomes such as breeding success rates. This
+phase involves:
+\begin{itemize}
+    \item Experimenting with various algorithms (e.g., logistic regression,
+    decision trees, neural networks) using Python libraries such as
+    Scikit-learn, TensorFlow, or PyTorch to determine the most suitable approach
+    for our data.
+    \item Developing the model's training, validation, and testing processes,
+    ensuring the system is optimized for accuracy and performance.
+    \item Implementing backend APIs for data retrieval and model output
+    generation to support the frontend development in the next phase.
+\end{itemize}
+This phase will culminate with an evaluation of the model's initial accuracy and
+robustness, and any necessary refinements will be documented for the next
+sprint.
+
+\textbf{3. System Integration and Frontend Development:} In the third phase, the
+focus shifts to building the user-facing components and integrating the machine
+learning model into the existing CATTLEytics system. Activities include:
+\begin{itemize}
+    \item Developing a React-based frontend interface that allows farmers to
+    input data, visualize predictions, and interpret results in an intuitive
+    manner.
+    \item Implementing interactive visualizations using libraries like D3.js to
+    display herd health trends, genetic family trees, and predictive insights.
+    \item Integrating the frontend with the backend APIs, ensuring seamless data
+    flow and responsiveness across the system.
+    \item Initial system testing to verify that the user interface works well
+    with the machine learning outputs and data pipeline.
+\end{itemize}
+This phase will end with a functional demo of the frontend and backend
+integration, allowing for early user feedback and adjustments.
+
+\textbf{4. Testing, Deployment, and Refinement:} The final phase focuses on
+refining the system, conducting extensive testing, and preparing for deployment.
+Key activities include:
+\begin{itemize}
+    \item Performing unit, integration, and system-level testing to validate the
+    accuracy, performance, and reliability of the predictive model and frontend
+    interface.
+    \item Setting up a Continuous Integration/Continuous Deployment (CI/CD)
+    pipeline using GitHub Actions to automate testing and deployment to a
+    staging environment.
+    \item Conducting user testing sessions with industry stakeholders to gather
+    feedback, refine features, and enhance the usability of the system.
+    \item Finalizing user documentation, training materials, and preparing the
+    system for deployment to the production environment.
+\end{itemize}
+This phase will conclude with a complete system demonstration and the final
+handoff to stakeholders, ensuring the solution meets all requirements and is
+ready for the EXPO presentation.
+
+All phases will run concurrently with documentation development to meet capstone
+deliverables and ensure that non-functional requirements, such as performance
+and security, are integrated throughout the development process. Each phase will
+have some overlap to allow flexibility and responsiveness to evolving
+requirements.
 
 
 \section{Migration to the New Product}
