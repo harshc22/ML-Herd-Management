@@ -574,63 +574,590 @@ This table outlines the core use cases currently identified for the product.
 
 \section{Usability and Humanity Requirements}
 \subsection{Ease of Use Requirements}
-\lips
+\textbf{UHR1: Task Completion Efficiency}
+\begin{itemize}
+    \item \textbf{Description}: The user interface must allow users to complete
+    common tasks, such as inputting data and retrieving predictions, within no
+    more than 10 minutes.
+    \item \textbf{Rationale}: Minimizing the number of steps needed to complete
+    tasks will improve user efficiency and reduce frustration, ensuring a
+    smoother workflow.
+    \item \textbf{Fit Criterion}: During usability testing, all common tasks
+    must be completed within 10 minutes for at least 90\% of users.
+\end{itemize}
+\textbf{UHR2: Quick Onboarding}
+\begin{itemize}
+    \item \textbf{Description}: New users without prior machine learning
+    experience should be able to generate predictions using the system within
+    10 minutes, with assistance from help documentation or tooltips.
+    \item \textbf{Rationale}: Reducing the learning curve ensures that new
+    users can quickly adopt the system, improving overall usability and
+    reducing training time.
+    \item \textbf{Fit Criterion}: During user trials, at least 80\% of new
+    users must be able to generate a prediction within 10 minutes.
+\end{itemize}
 \subsection{Personalization and Internationalization Requirements}
-\lips
+\textbf{UHR3: Unit Customization}
+\begin{itemize}
+    \item \textbf{Description}: The system should support switching between
+    metric and imperial units for both input and output data related to cow
+    metrics.
+    \item \textbf{Rationale}: Users may use different measurement systems, so
+    supporting unit customization ensures the system is applicable to a broader
+    audience and will prevent users from using incorrect inputs due to unit
+    mismatches.
+    \item \textbf{Fit Criterion}: Usability testing must show that at least
+    90\% of users can switch between units and see corresponding changes in
+    inputs/outputs.
+\end{itemize}
+\textbf{UHR4: Language Support}
+\begin{itemize}
+    \item \textbf{Description}: The system must offer support for English and
+    French, ensuring all text elements and documentation are fully translated.
+    \item \textbf{Rationale}: Offering English and French options makes the
+    system more accessible to all Canadians in Ontario, expanding its usability.
+    \item \textbf{Fit Criterion}: Usability testing must confirm that users can
+    switch between languages in under 5 seconds, and all UI elements and help
+    documentation must be fully translated with no missing text.
+\end{itemize}
 \subsection{Learning Requirements}
-\lips
+\textbf{UHR5: User Proficiency}
+\begin{itemize}
+    \item \textbf{Description}: Users should be able to gain proficiency in the
+    system's primary functions, such as data input and prediction generation,
+    within 2 hours of active use.
+    \item \textbf{Rationale}: Ensuring a reasonable learning curve enhances
+    adoption rates and minimizes user frustration.
+    \item \textbf{Fit Criterion}: At least 80\% of users must pass a proficiency
+    test after 2 hours of use, demonstrating the ability to use key system
+    functions.
+\end{itemize}
+\textbf{UHR6: Quick Access to Help}
+\begin{itemize}
+    \item \textbf{Description}: he system must provide contextual help (e.g.,
+    tooltips or tutorials) that can be accessed within 15 seconds for key
+    features.
+    \item \textbf{Rationale}: Easy access to help reduces confusion and
+    minimizes time wasted on seeking external support, improving the overall
+    user experience.
+    \item \textbf{Fit Criterion}: Usability testing must demonstrate that users
+    can activate contextual help for any key feature in under 5 seconds.
+\end{itemize}
+
 \subsection{Understandability and Politeness Requirements}
-\lips
+\textbf{UHR7: Clear Output Explanation}
+\begin{itemize}
+    \item \textbf{Description}: The system must present model predictions in an
+    understandable format, including explanations of key factors influencing the
+    results.
+    \item \textbf{Rationale}: Non-technical users should be able to understand
+    how the model arrived at its conclusions, increasing trust and usability of
+    the system.
+    \item \textbf{Fit Criterion}: At least 80\% of non-technical users must
+    indicate that they understand the output and influencing factors after
+    using the system.
+\end{itemize}
+\textbf{UHR8: Informative Error Handling}
+\begin{itemize}
+    \item \textbf{Description}: Error messages should be clear, non-technical,
+    and provide actionable steps for resolution, while being dismissible within
+    5 seconds.
+    \item \textbf{Rationale}: Polite and informative error handling reduces user
+    frustration and helps users quickly recover from mistakes or system issues.
+    \item \textbf{Fit Criterion}: Usability testing must show that at least 90\%
+    of users can dismiss error messages within 5 seconds and understand how to
+    resolve the issue.
+\end{itemize}
+
 \subsection{Accessibility Requirements}
-\lips
+\textbf{UHR9: Keyboard Navigation Support}
+\begin{itemize}
+    \item \textbf{Description}: The system must allow users to navigate and
+    interact with all functional elements using only the keyboard.
+    \item \textbf{Rationale}: Ensuring that the system is accessible to users
+    with motor disabilities or those who prefer keyboard navigation enhances
+    inclusivity.
+    \item \textbf{Fit Criterion}: Accessibility testing must confirm that all
+    interactive elements can be accessed via keyboard shortcuts, with no more
+    than 5\% error rate.
+\end{itemize}
+\textbf{UHR10: WCAG 2.1 AA Compliance}
+\begin{itemize}
+    \item \textbf{Description}: The system must meet
+    \href{https://www.w3.org/TR/WCAG21/}{WCAG 2.1 AA} standards, ensuring that
+    elements like color contrast, text size, and screen reader compatibility are
+    accessible to users with disabilities.
+    \item \textbf{Rationale}: Compliance with established accessibility
+    standards ensures that the system is usable by individuals with a wide range
+    of abilities, enhancing inclusivity.
+    \item \textbf{Fit Criterion}: Automated accessibility testing and user
+    trials must confirm that the system meets WCAG 2.1 AA standards, with no
+    major violations.
+\end{itemize}
 
 \section{Performance Requirements}
 \subsection{Speed and Latency Requirements}
-\lips
+\textbf{PFR1: Prediction Response Time}
+\begin{itemize}
+    \item \textbf{Description}: The system must process input data and return
+    predictions within 10 seconds under normal operating conditions.
+    \item \textbf{Rationale}: Speed is critical for maintaining smooth user
+    experiences and ensuring timely decision-making.
+    \item \textbf{Fit Criterion}: 95\% of predictions must be returned within 10
+    seconds during testing under normal conditions (100 concurrent users).
+\end{itemize}
+\textbf{PFR2: User Interface Response Time}
+\begin{itemize}
+    \item \textbf{Description}: The system's user interface (UI) must respond to
+    user interactions, such as button clicks and input field changes, within 0.5
+    seconds.
+    \item \textbf{Rationale}: Fast UI response times ensure a smooth user
+    experience and reduce frustration, especially for data input and navigation
+    tasks.
+    \item \textbf{Fit Criterion}: During usability testing, the system must
+    respond to 90\% of UI interactions within 0.5 seconds.
+\end{itemize}
+
 \subsection{Safety-Critical Requirements}
-\lips
+No safety-critical requirements needed.
+
 \subsection{Precision or Accuracy Requirements}
-\lips
+\textbf{PFR3: Prediction Accuracy Threshold}
+\begin{itemize}
+    \item \textbf{Description}: The machine learning model must achieve a
+    minimum prediction accuracy of 85\% when tested against a historical dataset
+    of cow offspring features.
+    \item \textbf{Rationale}: High prediction accuracy is essential for the
+    system to be considered reliable in its intended agricultural context.
+    \item \textbf{Fit Criterion}: Testing with a dataset of at least 1,000
+    samples must demonstrate a minimum accuracy of 85\%, with results compared
+    to known historical outcomes.
+\end{itemize}
+\textbf{PFR4: Consistency of Prediction Output}
+\begin{itemize}
+    \item \textbf{Description}: The model must consistently produce the same
+    prediction for the same set of input data, with no more than 1\% variation
+    in output across multiple trials.
+    \item \textbf{Rationale}: Consistency in model outputs ensures reliability,
+    preventing users from seeing inconsistent results when using identical
+    inputs.
+    \item \textbf{Fit Criterion}: Repeated predictions using the same input data
+    must produce the same result 99\% of the time in testing across 100 trials.
+\end{itemize}
+
 \subsection{Robustness or Fault-Tolerance Requirements}
-\lips
+\textbf{PFR5: System Recovery From Failures}
+\begin{itemize}
+    \item \textbf{Description}: In the event of a system failure, the system
+    must be able to recover within 30 seconds and restore all data from the last
+    stable state.
+    \item \textbf{Rationale}: Fault tolerance ensures that users do not lose
+    data or progress due to system crashes, increasing system reliability.
+    \item \textbf{Fit Criterion}: Testing must demonstrate system recovery
+    within 30 seconds after simulated failures, with 100\% of data restored to
+    its last known state.
+\end{itemize}
+\textbf{PFR6: Graceful Handling of Invalid Inputs}
+\begin{itemize}
+    \item \textbf{Description}: The system must handle invalid inputs without
+    crashing, providing clear feedback to the user and offering solutions to
+    correct the input.
+    \item \textbf{Rationale}: Robust handling of invalid inputs ensures system
+    stability and improves the user experience by guiding them through input
+    corrections.
+    \item \textbf{Fit Criterion}: Fault tolerance testing must show that 100\%
+    of invalid inputs are flagged, and appropriate error messages are displayed
+    without causing system crashes.
+\end{itemize}
+\textbf{PFR7: Load Balancing for Heavy Traffic}
+\begin{itemize}
+    \item \textbf{Description}: The system must automatically distribute traffic
+    across servers in case of high load, ensuring stable performance for all
+    users.
+    \item \textbf{Rationale}: Robust load balancing prevents system downtime or
+    performance degradation during periods of heavy usage.
+    \item \textbf{Fit Criterion}: Load tests must demonstrate that the system
+    can handle spikes in traffic (up to 150\% of normal load) without response
+    times exceeding 10 seconds.
+\end{itemize}
+
 \subsection{Capacity Requirements}
-\lips
+\textbf{PFR8: User Load Capacity}
+\begin{itemize}
+    \item \textbf{Description}: The system must be able to handle at least 500
+    concurrent users without performance degradation.
+    \item \textbf{Rationale}: Ensuring high capacity allows for scalability and
+    supports widespread adoption of the system by large user bases.
+    \item \textbf{Fit Criterion}: Load testing must confirm that the system can
+    support at least 500 concurrent users while maintaining prediction response
+    times of under 15 seconds.
+\end{itemize}
+
 \subsection{Scalability or Extensibility Requirements}
-\lips
+\textbf{PFR9: Modular Design}
+\begin{itemize}
+    \item \textbf{Description}: The system’s architecture must be modular,
+    allowing new features such as additional machine learning models, data
+    types, or metrics to be integrated without major redesign.
+    \item \textbf{Rationale}: A modular design enables easy expansion as new
+    business requirements emerge, increasing the system’s longevity and
+    adaptability.
+    \item \textbf{Fit Criterion}: Documentation and testing must confirm that
+    new features can be added or updated without affecting the core
+    functionality of existing modules.
+\end{itemize}
+\textbf{PFR10: Vertical Scaling for Increased Demand}
+\begin{itemize}
+    \item \textbf{Description}: The system must be able to scale vertically to
+    handle increased demand by adding more computational resources without
+    redesigning the architecture.
+    \item \textbf{Rationale}: Vertical scalability ensures that as demand grows,
+    the system can continue to function efficiently by utilizing additional
+    hardware resources.
+    \item \textbf{Fit Criterion}: Stress tests must demonstrate that adding
+    computational resources (e.g., CPUs, memory) results in proportional
+    performance gains under increased loads.
+\end{itemize}
+
 \subsection{Longevity Requirements}
-\lips
+\textbf{PFR11: Code Maintainability}
+\begin{itemize}
+    \item \textbf{Description}: The system’s codebase must be well-documented,
+    following the set coding standards to ensure that it can be maintained and
+    extended over the next 5 years without requiring significant rework.
+    \item \textbf{Rationale}: Ensuring code maintainability reduces future
+    technical debt and allows for easier updates and feature expansions.
+    \item \textbf{Fit Criterion}: Code reviews and external audits must confirm
+    that the code adheres to industry-standard practices and includes sufficient
+    documentation for future maintainers.
+\end{itemize}
+\textbf{PFR12: Support for Future Technologies}
+\begin{itemize}
+    \item \textbf{Description}: The system must be designed to support the
+    integration of future technologies, including newer machine learning models
+    or external data sources, without requiring a full system overhaul.
+    \item \textbf{Rationale}: Designing for longevity ensures that the system
+    can evolve with advances in technology, preserving its relevance and
+    utility.
+    \item \textbf{Fit Criterion}:  System architecture and documentation must
+    demonstrate that the system can accommodate integration of future
+    technologies with minimal redesign.
+\end{itemize}
+
 
 \section{Operational and Environmental Requirements}
 \subsection{Expected Physical Environment}
-\lips
+\textbf{OER1: Network Stability}
+\begin{itemize}
+    \item \textbf{Description}: The system must operate reliably over both
+    stable and fluctuating internet connections.
+    \item \textbf{Rationale}: Given that the CATTLEytics system may be deployed
+    in rural farm settings with less stable internet, the system needs to handle
+    both stable and intermittent connectivity.
+    \item \textbf{Fit Criterion}: The system must function with no critical
+    failures in environments with intermittent connectivity and maintain
+    prediction response times within 25\% of normal operation during network
+    fluctuations.
+\end{itemize}
+
 \subsection{Wider Environment Requirements}
-\lips
+\textbf{OER2: Sustainability in Hosting}
+\begin{itemize}
+    \item \textbf{Description}: The system’s cloud-based infrastructure must
+    prioritize sustainability, with at least 50\% of its hosting powered by
+    renewable energy sources.
+    \item \textbf{Rationale}: Environmental sustainability is a growing
+    priority, and using renewable energy sources can reduce the system’s carbon
+    footprint.
+    \item \textbf{Fit Criterion}: Hosting provider documentation must show that
+    at least 50\% of the energy used in hosting services comes from renewable
+    sources.
+\end{itemize}
+
 \subsection{Requirements for Interfacing with Adjacent Systems}
-\lips
+\textbf{OER3: API Compatability with CATTLEytics}
+\begin{itemize}
+    \item \textbf{Description}: The system must provide a well-documented API to
+    interface with CATTLEytics' existing application and third-party tools,
+    supporting data exchange in standard formats.
+    \item \textbf{Rationale}: Ensuring smooth data exchange between the
+    prediction model and adjacent systems, such as farm management platforms, is
+    essential for integration and workflow efficiency.
+    \item \textbf{Fit Criterion}: API testing must confirm successful data
+    exchange with the CATTLEytics platform and third-party tools, with 100\% of
+    test cases passing.
+\end{itemize}
+\textbf{OER4: Seamless Data Transfer}
+\begin{itemize}
+    \item \textbf{Description}: The system must ensure that data transfers
+    between the prediction model and adjacent systems are fault-tolerant, with
+    automatic retries for failed transmissions.
+    \item \textbf{Rationale}: Seamless data integration is essential to prevent
+    loss of data during transmission, ensuring that all related systems remain
+    synchronized and accurate.
+    \item \textbf{Fit Criterion}: In testing, the system must recover from 100\%
+    of simulated transmission failures by automatically retrying data transfers
+    without user intervention.
+\end{itemize}
+
 \subsection{Productization Requirements}
-\lips
+\textbf{OER5: Automated Updates}
+\begin{itemize}
+    \item \textbf{Description}: The system must support automated updates,
+    ensuring that all future software patches and improvements can be deployed
+    without user intervention.
+    \item \textbf{Rationale}: Automated updates ensure that the system remains
+    up-to-date with the latest features and security patches without requiring
+    manual intervention, reducing downtime and maintenance costs.
+    \item \textbf{Fit Criterion}: Testing must confirm that updates are
+    automatically deployed in 100\% of test cases, with no need for user
+    interaction during the update process.
+\end{itemize}
+
 \subsection{Release Requirements}
-\lips
+\textbf{OER6: Testing and Revision Cycles}
+\begin{itemize}
+    \item \textbf{Description}: The system must undergo a formal testing phase,
+    involving key stakeholders (e.g., farm operators, internal CATTLEytics team
+    members), with feedback collected to identify potential issues before final
+    release.
+    \item \textbf{Rationale}: Testing with actual users ensures that real-world
+    use cases and unforeseen issues are identified and resolved, improving
+    overall product quality.
+    \item \textbf{Fit Criterion}: Feedback from testers must be collected and
+    analyzed, with all critical issues resolved before the final product
+    release. At least 10 users must be involved in this testing phase.
+\end{itemize}
+\textbf{OER7: Documentation for End Users and Developers}
+\begin{itemize}
+    \item \textbf{Description}: The system must include comprehensive
+    documentation for both end users (features, usage) and developers (API,
+    integration, system architecture) prior to release.
+    \item \textbf{Rationale}: Clear and thorough documentation ensures that both
+    users and developers can effectively utilize and maintain the system,
+    reducing support costs and improving product adoption.
+    \item \textbf{Fit Criterion}: Documentation must pass an internal review,
+    with at least 90\% of users and developers rating the documentation as
+    “sufficient” or better in post-release surveys.
+\end{itemize}
+\textbf{OER8: Release Versioning and Rollback Support}
+\begin{itemize}
+    \item \textbf{Description}: Each system release must be versioned, with the
+    ability to rollback to a previous stable version if critical issues arise
+    post-release.
+    \item \textbf{Rationale}: Versioning and rollback capabilities are essential
+    for ensuring stability and addressing issues that might emerge in new
+    releases, minimizing system downtime and user impact.
+    \item \textbf{Fit Criterion}: All releases must be properly versioned, and
+    rollback testing must confirm that previous versions can be restored without
+    data loss or functionality degradation.
+\end{itemize}
 
 \section{Maintainability and Support Requirements}
 \subsection{Maintenance Requirements}
-\lips
+\textbf{MSR1: Scheduled Maintenance Windows}
+\begin{itemize}
+    \item \textbf{Description}: The system must support scheduled maintenance
+    windows, during which the application can be updated or maintained without
+    impacting user activity.
+    \item \textbf{Rationale}: Planned maintenance reduces the risk of unexpected
+    downtime and allows system updates to be performed in a controlled manner.
+    \item \textbf{Fit Criterion}: Testing must demonstrate that the system can
+    be taken offline for maintenance and restored within a scheduled
+    maintenance window of no more than 4 hours, with no data loss.
+\end{itemize}
+\textbf{MSR2: Automated Testing for Releases}
+\begin{itemize}
+    \item \textbf{Description}: The system must incorporate automated testing to
+    ensure that all new maintenance releases pass unit, integration, and
+    regression tests before deployment.
+    \item \textbf{Rationale}: Automated testing ensures that updates or bug
+    fixes do not introduce new errors, reducing the time and effort required for
+    manual testing.
+    \item \textbf{Fit Criterion}: Automated tests must cover at least 80\% of
+    the codebase, with no critical failures in tests run before each maintenance
+    release.
+\end{itemize}
+
 \subsection{Supportability Requirements}
-\lips
+\textbf{MSR3: Multi-tier Support Structure}
+\begin{itemize}
+    \item \textbf{Description}: The system must support a multi-tier support
+    structure, offering different levels of assistance, from basic user help
+    (FAQs) to advanced technical support (dedicated IT assistance).
+    \item \textbf{Rationale}: A tiered support system ensures that users receive
+    the appropriate level of assistance based on the complexity of the issue,
+    improving resolution efficiency.
+    \item \textbf{Fit Criterion}: Support logs must show that 90\% of issues are
+    resolved within the expected timeframe for each support tier, with at least
+    75\% of basic issues resolved through self-service (e.g., FAQs).
+\end{itemize}
+\textbf{MSR4: Comprehensive Error Logging}
+\begin{itemize}
+    \item \textbf{Description}: The system must implement comprehensive error
+    logging, capturing detailed error messages for all exceptions and
+    performance issues.
+    \item \textbf{Rationale}: Detailed error logs help support teams quickly
+    diagnose and resolve problems, ensuring that users experience minimal
+    downtime.
+    \item \textbf{Fit Criterion}: Error logs must capture 100\% of critical
+    errors during testing, with logs providing detailed information sufficient
+    for issue resolution in 90\% of cases.
+\end{itemize}
+
 \subsection{Adaptability Requirements}
-\lips
+\textbf{MSR5: Plug-in Architecture for Future Features}
+\begin{itemize}
+    \item \textbf{Description}: The system must be built using a plug-in
+    architecture, allowing new features or modules (e.g., additional prediction
+    algorithms) to be added without impacting core functionality.
+    \item \textbf{Rationale}: A plug-in architecture allows the system to be
+    extended easily in the future, enabling it to adapt to evolving business or
+    technical requirements.
+    \item \textbf{Fit Criterion}: At least one new feature or module must be
+    added as a plug-in during testing, with no impact on the core system or
+    existing features.
+\end{itemize}
 
 \section{Security Requirements}
 \subsection{Access Requirements}
-\lips
+\textbf{SCR1: Role-Based Access Control (RBAC)}
+\begin{itemize}
+    \item \textbf{Description}: The system must implement role-based access
+    control to restrict access based on user roles (e.g., administrator, data
+    analyst, external user).
+    \item \textbf{Rationale}: RBAC ensures that only authorized users can access
+    sensitive parts of the system, reducing the risk of unauthorized access or
+    manipulation.
+    \item \textbf{Fit Criterion}: Access tests must verify that users with
+    different roles can only access the functionalities or data assigned to
+    their role, with 100\% compliance in role-based access rules during testing.
+\end{itemize}
+\textbf{SCR2: Session Timeout}
+\begin{itemize}
+    \item \textbf{Description}: The system must automatically log out users
+    after 15 minutes of inactivity to prevent unauthorized access via unattended
+    sessions.
+    \item \textbf{Rationale}: Automatic session timeout reduces the likelihood
+    of unauthorized access due to forgotten or unattended active sessions.
+    \item \textbf{Fit Criterion}: Testing must show that all user sessions are
+    automatically terminated after 15 minutes of inactivity, with users being
+    required to log back in to regain access.
+\end{itemize}
+
 \subsection{Integrity Requirements}
-\lips
+\textbf{SCR3: Data Validation on Input}
+\begin{itemize}
+    \item \textbf{Description}: The system must implement robust input
+    validation to prevent invalid or malicious data from being entered and
+    processed by the application.
+    \item \textbf{Rationale}: Proper data validation protects against injection
+    attacks (e.g., SQL injection) and ensures that only valid data is processed.
+    \item \textbf{Fit Criterion}: Penetration testing must confirm that no
+    invalid or malicious data bypasses input validation mechanisms in 100\% of
+    test cases.
+\end{itemize}
+\textbf{SCR4: Transaction Atomicity}
+\begin{itemize}
+    \item \textbf{Description}: The system must ensure that all data
+    transactions are atomic, meaning they are either fully completed or fully
+    rolled back in case of an error.
+    \item \textbf{Rationale}: Atomic transactions ensure data integrity by
+    preventing partial updates that could corrupt data or leave the system in an
+    inconsistent state.
+    \item \textbf{Fit Criterion}: During testing, all simulated transaction
+    failures must result in a full rollback with no partial updates to the
+    database.
+\end{itemize}
+\textbf{SCR5: Data Consistency Across Systems}
+\begin{itemize}
+    \item \textbf{Description}: The system must maintain data consistency across
+    all integrated systems, ensuring that updates or changes are reflected
+    accurately across the board.
+    \item \textbf{Rationale}: Consistent data across integrated systems prevents
+    discrepancies that could lead to erroneous predictions or reports.
+    \item \textbf{Fit Criterion}: Consistency checks during testing must verify
+    that updates in one system are correctly reflected across all other systems
+    in 100\% of test cases.
+\end{itemize}
+
 \subsection{Privacy Requirements}
-\lips
+\textbf{SCR6: Data Encryption}
+\begin{itemize}
+    \item \textbf{Description}: All sensitive data, including personal
+    information and prediction results, must be encrypted both at rest and in
+    transit using industry-standard encryption protocols.
+    \item \textbf{Rationale}: Encrypting sensitive data ensures that even if the
+    data is intercepted or accessed without authorization, it remains unreadable
+    and secure.
+    \item \textbf{Fit Criterion}: Testing must confirm that all sensitive data
+    is encrypted with no plaintext exposure during storage or transmission,
+    potentially using protocols such as AES-256 for encryption at rest and TLS
+    1.2+ for encryption in transit.
+\end{itemize}
+
 \subsection{Audit Requirements}
-\lips
+\textbf{SCR7: Data Access Monitoring}
+\begin{itemize}
+    \item \textbf{Description}: The system must monitor and log all access to
+    sensitive data, with alerts triggered for any unauthorized access attempts.
+    \item \textbf{Rationale}: Continuous monitoring of data access ensures that
+    any unauthorized or suspicious activity is detected early, preventing data
+    breaches.
+    \item \textbf{Fit Criterion}: Testing must confirm that unauthorized access
+    attempts trigger an alert in real time, and all data access is logged and
+    available for review in audit logs.
+\end{itemize}
+\textbf{SCR8: Audit Logging of Sensitive Operations}
+\begin{itemize}
+    \item \textbf{Description}: The system must log all sensitive operations
+    (e.g., data access, user account changes, system configuration changes) for
+    auditing and compliance purposes.
+    \item \textbf{Rationale}: Audit logs allow tracking of who did what and
+    when, providing transparency and accountability for system changes and data
+    access.
+    \item \textbf{Fit Criterion}: Testing must verify that all sensitive
+    operations are logged, with each log entry containing a timestamp, user ID,
+    and details of the action performed.
+\end{itemize}
+\textbf{SCR9: Audit Log Retention Policy}
+\begin{itemize}
+    \item \textbf{Description}: The system must retain audit logs for a minimum
+    of 1 year, ensuring that historical data can be reviewed for compliance and
+    forensic investigations.
+    \item \textbf{Rationale}: Retaining audit logs for an adequate period is
+    essential for compliance with regulatory requirements and for investigating
+    any incidents that occur.
+    \item \textbf{Fit Criterion}: Testing must confirm that audit logs are
+    stored securely and accessible for at least 1 year, with no loss of log data
+    during the retention period.
+\end{itemize}
+
 \subsection{Immunity Requirements}
-\lips
+\textbf{SCR10: Resilience Against Denial-of-Service (DoS) Attacks}
+\begin{itemize}
+    \item \textbf{Description}: The system must be resilient to denial-of-service
+    (DoS) attacks, with automatic measures in place to mitigate the impact of
+    such attacks.
+    \item \textbf{Rationale}: DoS attacks can disrupt system availability and
+    cause significant downtime, making resilience essential for maintaining
+    uninterrupted service.
+    \item \textbf{Fit Criterion}: Simulated DoS attacks must show that the
+    system remains available for 95\% of legitimate users, with automated
+    scaling or mitigation strategies successfully limiting the attack's impact.
+\end{itemize}
+\textbf{SCR11: Recovery From Cyberattacks}
+\begin{itemize}
+    \item \textbf{Description}: The system must have a defined recovery protocol
+    that ensures operations can be restored within 4 hours in the event of a
+    successful cyberattack.
+    \item \textbf{Rationale}: In case of a security breach, a fast recovery
+    process minimizes downtime and limits the damage caused by the attack.
+    \item \textbf{Fit Criterion}: Disaster recovery tests must confirm that the
+    system can be fully restored within 4 hours after a simulated breach, with
+    no loss of critical data.
+\end{itemize}
+
 
 \section{Cultural Requirements}
 \subsection{Cultural Requirements}
