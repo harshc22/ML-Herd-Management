@@ -44,8 +44,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\textbf{Date}} & {\textbf{Version}} & {\textbf{Notes}}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+October 6, 2024 & 1.0 & Initial SRS document\\
 \bottomrule
 \end{tabularx}
 
@@ -108,37 +107,518 @@ involved in the Project}
 
 \section{The Scope of the Work}
 \subsection{The Current Situation}
-\lips
+The current state of dairy farming presents challenges in efficiently predicting
+the health, productivity, and breeding outcomes of cattle. Farmers typically rely 
+on historical records, but the analysis is done manually, often leading to 
+reactive management. The existing systems do not utilize advanced technologies 
+such as machine learning for predictive analytics. As a result, there is limited 
+proactive management regarding milk production, breeding success, and herd longevity, 
+which directly impacts farm profitability and sustainability.
+
+The current solution environment lacks integration of large datasets from multiple 
+sources, such as individual cow health records, breeding history, and environmental 
+conditions, into a single system that can offer actionable predictions.
 \subsection{The Context of the Work}
-\lips
+This project aims to develop a machine learning model that will leverage 
+historical herd data to predict important traits such as milk yield, breeding 
+success rates, and the likelihood of a cow leaving the herd. This model will be 
+integrated into a farm management system, providing farmers with actionable 
+insights. The goal is to move from reactive to proactive herd management.
+
+The model will use data such as the health, breed, and genetic history of both 
+the mother and father to predict traits in calves. The software will be 
+developed as part of a partnership with CATTLEytics Inc., ensuring seamless 
+integration into their existing platform used by dairy farmers.
 \subsection{Work Partitioning}
-\lips
+The project will be divided into several key components:
+
+\begin{enumerate}
+    \item \textbf{Data Collection and Preprocessing:}
+    \begin{itemize}
+        \item Collection of historical data from existing systems, including 
+        cow health records, breeding data, and productivity metrics.
+        \item Cleaning and standardizing the data for input into the machine 
+        learning model.
+    \end{itemize}
+
+    \item \textbf{Model Development:}
+    \begin{itemize}
+        \item Designing and implementing the machine learning model for trait 
+        prediction (e.g., milk production, herd retention).
+        \item Training and validating the model on historical datasets.
+        \item Iterative testing and refinement.
+    \end{itemize}
+
+    \item \textbf{Integration:}
+    \begin{itemize}
+        \item Integrating the prediction model into the CATTLEytics Inc. farm 
+        management system.
+        \item Ensuring that outputs are presented in a user-friendly format 
+        for farmers to make decisions.
+    \end{itemize}
+
+    \item \textbf{Testing and Validation:}
+    \begin{itemize}
+        \item Testing the software in real-world farm environments to validate 
+        predictions and refine the user interface.
+    \end{itemize}
+
+    \item \textbf{Documentation and Training:}
+    \begin{itemize}
+        \item Providing clear documentation for users and training for farmers 
+        to effectively use the system.
+    \end{itemize}
+\end{enumerate}
+
 \subsection{Specifying a Business Use Case (BUC)}
-\lips
+
+\textbf{Title:} Predicting Cow Traits for Optimized Herd Management\\
+\textbf{Primary Actor:} Dairy farmer using the CATTLEytics Inc. system.\\
+\textbf{Precondition:} The farmer has access to a herd management system 
+integrated with the prediction model. Historical data on breeding, milk 
+production, and herd turnover are available.\\
+\textbf{Trigger:} The farmer initiates the model to predict the outcomes of a 
+planned breeding or evaluates the likelihood of an existing cow leaving the herd.\\
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item The farmer selects cows for breeding and inputs the necessary data 
+    (e.g., parent traits).
+    \item The system processes the input and returns predictions for milk yield 
+    and herd retention likelihood.
+    \item Based on the model's predictions, the farmer makes informed decisions 
+    on breeding strategies or management actions to prevent herd loss.
+\end{enumerate}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item The farmer has actionable insights to improve herd productivity and 
+    manage herd turnover proactively.
+\end{itemize}
 
 \section{Business Data Model and Data Dictionary}
 \subsection{Business Data Model}
-\lips
+This section will be completed once the relevant data model details are available.
 \subsection{Data Dictionary}
-\lips
+This section will be completed once the relevant data model details are available.
+
 
 \section{The Scope of the Product}
+
+
 \subsection{Product Boundary}
-\lips
+The product's primary function is to predict cow traits such as milk production, 
+breeding success, and herd retention based on parental data. The machine learning 
+model will integrate into a platform like CATTLEytics Inc., and its 
+boundaries will include:
+
+\begin{itemize}
+    \item \textbf{Included}: The product will use historical data to generate 
+    predictive insights on milk production, breeding success rates, and herd 
+    retention likelihood. Farmers will be able to input relevant data to 
+    receive predictions.
+    \item \textbf{Not Included}: Real-time data collection and analysis, 
+    live health monitoring, or any complex integrations with external devices 
+    (e.g., IoT sensors).
+\end{itemize}
+
+This product will focus solely on predictive analytics based on historical data 
+and will not handle aspects like external raw data collection or advanced herd management 
+automation beyond providing insights.
+
 \subsection{Product Use Case Table}
-\lips
+This table outlines the core use cases currently identified for the product.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|c|l|l|X|}
+    \hline
+    \textbf{ID} & \textbf{Title} & \textbf{Actor} & \textbf{Description} \\
+    \hline
+    PUC1 & Predict Breeding Success & Dairy Farmer & Farmers input breeding 
+    data to get predictions on the likelihood of successful breeding. \\
+    \hline
+    PUC2 & Forecast Milk Production & Dairy Farmer & Farmers input cow data 
+    to get a prediction of future milk production. \\
+    \hline
+    PUC3 & Predict Herd Retention Likelihood & Dairy Farmer & Farmers receive 
+    predictions on whether cows are likely to stay in or leave the herd. \\
+    \hline
+\end{tabularx}
+\end{table}
+
+
 \subsection{Individual Product Use Cases (PUC's)}
-\lips
+
+\subsubsection{PUC1: Predict Breeding Success}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Farmer has historical data about cow and 
+    parental traits available for input.
+    \item \textbf{Trigger}: The farmer initiates a request to predict 
+    breeding success.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer enters relevant breeding data.
+        \item The system processes the input using historical records.
+        \item A prediction is generated on the likelihood of breeding success.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer gets an actionable prediction 
+    to decide whether to proceed with the breeding.
+\end{itemize}
+
+\subsubsection{PUC2: Forecast Milk Production}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Historical data for milk production and 
+    parental traits is available for input.
+    \item \textbf{Trigger}: The farmer requests a prediction for future milk 
+    production.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer inputs the cow's data.
+        \item The system processes the input data.
+        \item A prediction on future milk production is generated.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives a prediction that helps 
+    in planning milk yield expectations.
+\end{itemize}
+
+\subsubsection{PUC3: Predict Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Health and productivity data is available 
+    for the cows in question.
+    \item \textbf{Trigger}: The farmer requests predictions on herd retention 
+    likelihood.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer selects a cow or group of cows for analysis.
+        \item The system processes the available data.
+        \item A prediction is generated on whether the cows are likely to stay 
+        in or leave the herd.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives predictions to assist in 
+    managing herd turnover.
+\end{itemize}
+
+
+\subsubsection{PUC1: Predict Breeding Success}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Farmer has historical data about cow and 
+    parental traits available for input.
+    \item \textbf{Trigger}: The farmer initiates a request to predict 
+    breeding success.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer enters relevant breeding data.
+        \item The system processes the input using historical records.
+        \item A prediction is generated on the likelihood of breeding success.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer gets an actionable prediction 
+    to decide whether to proceed with the breeding.
+\end{itemize}
+
+\subsubsection{PUC2: Forecast Milk Production}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Historical data for milk production and 
+    parental traits is available for input.
+    \item \textbf{Trigger}: The farmer requests a prediction for future milk 
+    production.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer inputs the cow's data.
+        \item The system processes the input data.
+        \item A prediction on future milk production is generated.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives a prediction that helps 
+    in planning milk yield expectations.
+\end{itemize}
+
+\subsubsection{PUC3: Predict Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Primary Actor}: Dairy Farmer
+    \item \textbf{Preconditions}: Health and productivity data is available 
+    for the cows in question.
+    \item \textbf{Trigger}: The farmer requests predictions on herd retention 
+    likelihood.
+    \item \textbf{Main Success Scenario}:
+    \begin{enumerate}
+        \item The farmer selects a cow or group of cows for analysis.
+        \item The system processes the available data.
+        \item A prediction is generated on whether the cows are likely to stay 
+        in or leave the herd.
+    \end{enumerate}
+    \item \textbf{Postcondition}: The farmer receives predictions to assist in 
+    managing herd turnover.
+\end{itemize}
+
 
 \section{Functional Requirements}
+
 \subsection{Functional Requirements}
-\lips
+
+\textbf{FR1: Predict Breeding Success}
+\begin{itemize}
+    \item \textbf{Description}: The system shall predict the likelihood of a 
+    successful breeding event between two cows based on input data regarding 
+    parental traits and historical breeding records.
+    \item \textbf{Rationale}: This feature will help farmers make more informed 
+    breeding decisions, improving breeding efficiency and reducing failures.
+    \item \textbf{Fit Criterion}: The system will output a probability of 
+    breeding success based on parental data, and this probability must be 
+    verified by comparing predicted outcomes with actual breeding success over time.
+\end{itemize}
+\textbf{FR2: Forecast Milk Production}
+\begin{itemize}
+    \item \textbf{Description}: The system shall forecast the milk production 
+    of a cow based on historical milk yield and parental traits.
+    \item \textbf{Rationale}: Accurate predictions of future milk yield will 
+    enable farmers to better plan for production and make decisions on herd management.
+    \item \textbf{Fit Criterion}: The forecasted milk production must be within 
+    10\% (to be determined) accuracy when compared to actual milk yield over a specified period.
+\end{itemize}
+\textbf{FR3: Predict Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Description}: The system shall predict the likelihood of 
+    cows leaving the herd based on health records, productivity, and other 
+    historical data.
+    \item \textbf{Rationale}: This feature will enable farmers to proactively 
+    manage their herd, reducing unexpected departures and improving herd stability.
+    \item \textbf{Fit Criterion}: The system will provide a prediction score 
+    (e.g., high, medium, low) for herd retention, which can be evaluated by 
+    tracking actual herd retention over a six-month period.
+\end{itemize}
+\textbf{FR4: Data Input for Predictions}
+\begin{itemize}
+    \item \textbf{Description}: The system shall allow the farmer to input 
+    relevant data, such as breeding records, milk production history, and 
+    health records, into the prediction model.
+    \item \textbf{Rationale}: To generate accurate predictions, the system 
+    requires access to a range of historical data that can be inputted by the user.
+    \item \textbf{Fit Criterion}: The input form must successfully accept and 
+    validate required fields for at least 95\% of user inputs, with clear error 
+    handling for missing or incorrect data.
+\end{itemize}
+\textbf{FR5: Report Generation}
+\begin{itemize}
+    \item \textbf{Description}: The system shall generate a report summarizing 
+    predictions for breeding success, milk production, and herd retention for selected cows.
+    \item \textbf{Rationale}: Farmers need a consolidated report that provides 
+    actionable insights based on the predictions generated by the system.
+    \item \textbf{Fit Criterion}: The system will generate reports that can be 
+    exported to a PDF format and include all requested predictions in a structured layout.
+\end{itemize}
+\textbf{FR6: User Access Control}
+\begin{itemize}
+    \item \textbf{Description}: The system shall provide secure login and 
+    role-based access control, ensuring that only authorized users can access 
+    or modify the prediction data.
+    \item \textbf{Rationale}: Farm management data is sensitive and should only 
+    be accessible by authorized personnel.
+    \item \textbf{Fit Criterion}: The system must enforce unique login credentials 
+    for each user and restrict access based on roles (e.g., farmer, supervisor), 
+    with at least 99\% reliability in access control enforcement.
+\end{itemize}
+\textbf{FR7: Integration with Farm Management System}
+\begin{itemize}
+    \item \textbf{Description}: The system shall be designed to integrate with 
+    existing farm management platforms, such as CATTLEytics Inc, allowing seamless 
+    data exchange.
+    \item \textbf{Rationale}: Integration with existing platforms will enable 
+    the system to leverage historical data and provide predictions without 
+    requiring manual data entry.
+    \item \textbf{Fit Criterion}: The system should successfully exchange data 
+    with the farm management platform 90\% of the time during testing, 
+    without errors in data transmission.
+\end{itemize}
+
+\subsection{Formal Specification}
+
+\textbf{Specification 1: Breeding Success Prediction}
+\begin{itemize}
+    \item \textbf{Description}: The system must be able to predict the likelihood 
+    of breeding success between two cows based on historical data, such as 
+    parental traits and previous breeding records.
+    \item \textbf{Formal Specification}: \\
+    Let \( X \) represent a breeding event. \\
+    Let \( Y \) represent the set of all possible breeding events. \\
+    Let \( P \) represent the predicted probability of success.
+    
+    \[
+    \forall X \in Y : \textrm{Prediction}(X) \rightarrow P \in [0, 1]
+    \]
+    
+    The system shall compute the probability \( P \) for each breeding event \( X \).
+\end{itemize}
+
+\textbf{Specification 2: Milk Production Forecast}
+\begin{itemize}
+    \item \textbf{Description}: The system shall forecast future milk production 
+    for a given cow based on historical data of both the cow and its parents.
+    \item \textbf{Formal Specification}: \\
+    Let \( C \) represent a cow in the herd. \\
+    Let \( Y \) represent historical milk production data. \\
+    
+    \[
+    \forall C : \textrm{Forecast}(C, Y) \rightarrow \textrm{PredictedMilkProduction}(C)
+    \]
+    
+    The system shall provide a forecast of future milk production for each 
+    cow \( C \) based on input data \( Y \).
+\end{itemize}
+
+\textbf{Specification 3: Herd Retention Likelihood}
+\begin{itemize}
+    \item \textbf{Description}: The system must predict the likelihood of a cow 
+    staying within or leaving the herd, based on its health, productivity, 
+    and historical data.
+    \item \textbf{Formal Specification}: \\
+    Let \( H \) represent a cow's health record. \\
+    Let \( P \) represent the predicted probability of retention.
+    
+    \[
+    \forall H : \textrm{RetentionPrediction}(H) \rightarrow P \in [0, 1]
+    \]
+    
+    The system shall compute the retention probability \( P \) for each cow 
+    based on its health records and other historical data.
+\end{itemize}
+
+\textbf{Specification 4: Data Input Validation}
+\begin{itemize}
+    \item \textbf{Description}: The system must validate the input data for 
+    cows and breeding events to ensure it is accurate and complete before 
+    generating predictions.
+    \item \textbf{Formal Specification}:
+    Let $D$ represent the input data for a cow or breeding event.
+    
+    $\forall D : \textrm{InputValid}(D) = 
+    \left\{
+    \begin{array}{ll}
+      \textrm{True} & \textrm{if data passes validation checks} \\
+      \textrm{False} & \textrm{otherwise}
+    \end{array}
+    \right.$
+    
+    The system must ensure that all data $D$ is valid before processing 
+    it for predictions.
+\end{itemize}
+
+\textbf{Specification 5: Report Generation (TBD)}
+\begin{itemize}
+    \item \textbf{Description}: The system must generate a report summarizing 
+    predictions for breeding success, milk production, and herd retention likelihood.
+    \item \textbf{Formal Specification}: \\
+    Let \( R \) represent the report generated. \\
+    \[
+    \forall P, C : \textrm{GenerateReport}(P, C) \rightarrow R
+    \]
+    The system shall generate a report \( R \) based on the predictions \( P \) and input data \( C \).
+\end{itemize}
+
+
+
 
 \section{Look and Feel Requirements}
 \subsection{Appearance Requirements}
-\lips
+\textbf{LFR1: Dashboard Display of Predictions}
+\begin{itemize}
+    \item \textbf{Description}: The system's dashboard shall present the 
+    predicted cow traits (e.g., milk production, breeding success) in a 
+    structured and organized manner, clearly showing individual predictions 
+    for each cow.
+    \item \textbf{Rationale}: Farmers need to quickly and easily interpret the 
+    predictions without searching through large amounts of data. An organized 
+    display ensures that all predictions can be understood at a glance.
+    \item \textbf{Fit Criterion}: The system shall display predictions for 
+    multiple cows in a table format, with clear labels for each trait, such 
+    as milk production and herd retention likelihood.
+\end{itemize}
+\textbf{LFR2: Text Contrast for Readability}
+\begin{itemize}
+    \item \textbf{Description}: All text displayed on the system interface 
+    shall use a high-contrast color scheme to ensure readability.
+    \item \textbf{Rationale}: Farmers and users may access the system in 
+    various lighting conditions. High contrast, such as black text on a 
+    white background, will ensure clarity.
+    \item \textbf{Fit Criterion}: The system shall use a high-contrast 
+    color scheme for all text, ensuring that it meets standard readability 
+    guidelines under different lighting conditions.
+\end{itemize}
+
+\textbf{LFR1: Dashboard Display of Predictions}
+\begin{itemize}
+    \item \textbf{Description}: The system's dashboard shall present the 
+    predicted cow traits (e.g., milk production, breeding success) in a 
+    structured and organized manner, clearly showing individual predictions 
+    for each cow.
+    \item \textbf{Rationale}: Farmers need to quickly and easily interpret the 
+    predictions without searching through large amounts of data. An organized 
+    display ensures that all predictions can be understood at a glance.
+    \item \textbf{Fit Criterion}: The system shall display predictions for 
+    multiple cows in a table format, with clear labels for each trait, such 
+    as milk production and herd retention likelihood.
+\end{itemize}
+\textbf{LFR2: Text Contrast for Readability}
+\begin{itemize}
+    \item \textbf{Description}: All text displayed on the system interface 
+    shall use a high-contrast color scheme to ensure readability.
+    \item \textbf{Rationale}: Farmers and users may access the system in 
+    various lighting conditions. High contrast, such as black text on a 
+    white background, will ensure clarity.
+    \item \textbf{Fit Criterion}: The system shall use a high-contrast 
+    color scheme for all text, ensuring that it meets standard readability 
+    guidelines under different lighting conditions.
+\end{itemize}
+
 \subsection{Style Requirements}
-\lips
+\textbf{LFS1: Consistent Formatting for Input Fields}
+\begin{itemize}
+    \item \textbf{Description}: All data input fields, such as for entering 
+    cow or parental traits, should follow a consistent format with clear labels 
+    and input validation.
+    \item \textbf{Rationale}: A consistent layout for input fields will 
+    minimize errors and ensure ease of use when farmers input or update data.
+    \item \textbf{Fit Criterion}: Input fields shall maintain a uniform 
+    format, with clear labels and consistent spacing throughout the interface.
+\end{itemize}
+\textbf{LFS2: Minimalist Design for the Dashboard}
+\begin{itemize}
+    \item \textbf{Description}: The dashboard interface shall maintain a 
+    clean and minimalist design, avoiding unnecessary clutter or decorative 
+    elements.
+    \item \textbf{Rationale}: A simplified interface will allow farmers to 
+    focus on the essential data (predictions) without distractions, ensuring 
+    ease of use.
+    \item \textbf{Fit Criterion}: Over 80\% of users in a usability test 
+    shall report that the dashboard is free from unnecessary elements and 
+    easy to navigate.
+\end{itemize}
+
+\textbf{LFS1: Consistent Formatting for Input Fields}
+\begin{itemize}
+    \item \textbf{Description}: All data input fields, such as for entering 
+    cow or parental traits, should follow a consistent format with clear labels 
+    and input validation.
+    \item \textbf{Rationale}: A consistent layout for input fields will 
+    minimize errors and ensure ease of use when farmers input or update data.
+    \item \textbf{Fit Criterion}: Input fields shall maintain a uniform 
+    format, with clear labels and consistent spacing throughout the interface.
+\end{itemize}
+\textbf{LFS2: Minimalist Design for the Dashboard}
+\begin{itemize}
+    \item \textbf{Description}: The dashboard interface shall maintain a 
+    clean and minimalist design, avoiding unnecessary clutter or decorative 
+    elements.
+    \item \textbf{Rationale}: A simplified interface will allow farmers to 
+    focus on the essential data (predictions) without distractions, ensuring 
+    ease of use.
+    \item \textbf{Fit Criterion}: Over 80\% of users in a usability test 
+    shall report that the dashboard is free from unnecessary elements and 
+    easy to navigate.
+\end{itemize}
+
 
 \section{Usability and Humanity Requirements}
 \subsection{Ease of Use Requirements}
