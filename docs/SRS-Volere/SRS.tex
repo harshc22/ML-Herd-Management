@@ -547,55 +547,7 @@ This table outlines the core use cases currently identified for the product.
     guidelines under different lighting conditions.
 \end{itemize}
 
-\textbf{LFR1: Dashboard Display of Predictions}
-\begin{itemize}
-    \item \textbf{Description}: The system's dashboard shall present the 
-    predicted cow traits (e.g., milk production, breeding success) in a 
-    structured and organized manner, clearly showing individual predictions 
-    for each cow.
-    \item \textbf{Rationale}: Farmers need to quickly and easily interpret the 
-    predictions without searching through large amounts of data. An organized 
-    display ensures that all predictions can be understood at a glance.
-    \item \textbf{Fit Criterion}: The system shall display predictions for 
-    multiple cows in a table format, with clear labels for each trait, such 
-    as milk production and herd retention likelihood.
-\end{itemize}
-\textbf{LFR2: Text Contrast for Readability}
-\begin{itemize}
-    \item \textbf{Description}: All text displayed on the system interface 
-    shall use a high-contrast color scheme to ensure readability.
-    \item \textbf{Rationale}: Farmers and users may access the system in 
-    various lighting conditions. High contrast, such as black text on a 
-    white background, will ensure clarity.
-    \item \textbf{Fit Criterion}: The system shall use a high-contrast 
-    color scheme for all text, ensuring that it meets standard readability 
-    guidelines under different lighting conditions.
-\end{itemize}
-
 \subsection{Style Requirements}
-\textbf{LFS1: Consistent Formatting for Input Fields}
-\begin{itemize}
-    \item \textbf{Description}: All data input fields, such as for entering 
-    cow or parental traits, should follow a consistent format with clear labels 
-    and input validation.
-    \item \textbf{Rationale}: A consistent layout for input fields will 
-    minimize errors and ensure ease of use when farmers input or update data.
-    \item \textbf{Fit Criterion}: Input fields shall maintain a uniform 
-    format, with clear labels and consistent spacing throughout the interface.
-\end{itemize}
-\textbf{LFS2: Minimalist Design for the Dashboard}
-\begin{itemize}
-    \item \textbf{Description}: The dashboard interface shall maintain a 
-    clean and minimalist design, avoiding unnecessary clutter or decorative 
-    elements.
-    \item \textbf{Rationale}: A simplified interface will allow farmers to 
-    focus on the essential data (predictions) without distractions, ensuring 
-    ease of use.
-    \item \textbf{Fit Criterion}: Over 80\% of users in a usability test 
-    shall report that the dashboard is free from unnecessary elements and 
-    easy to navigate.
-\end{itemize}
-
 \textbf{LFS1: Consistent Formatting for Input Fields}
 \begin{itemize}
     \item \textbf{Description}: All data input fields, such as for entering 
@@ -820,26 +772,175 @@ Inhibit the New Product}
 
 \section{Tasks}
 \subsection{Project Planning}
-\lips
+
+The project will be scheduled to follow the deliverables deadlines as outlined
+in the SFWRENG 4G06 course outline.
+
+\begin{table}[h]
+	\centering
+	\caption{Project Documentation Tasks}
+	\vspace{5pt}
+	\begin{tabular}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.3\textwidth}|}
+		\hline
+		\textbf{Phase} & \textbf{Task}                      & \textbf{Due Date}
+		\\
+		\hline
+		Phase 1        & Hazard Analysis                    & October 23, 2024
+		\\
+		\cline{2-3}    & Verification and Validation Plan   & November 1, 2024
+		\\
+		\cline{2-3}    & Proof of Concept Demonstration     & November 11--22, 2024
+		\\
+		\cline{2-3}    & Design Documentat                  & January 15, 2025
+		\\
+		\cline{2-3}    & Revision 0 Demonstration           & February 3--14, 2025
+		\\
+		\hline
+		Phase 2        & Verification and Validation Report & March 7, 2025
+		\\
+		\cline{2-3}    & Final Demonstration                & March 24--30, 2025
+		\\
+		\cline{2-3}    & Final Documentation                & April 2, 2025
+		\\
+		\hline
+	\end{tabular}
+
+	\label{project_tasks}
+\end{table}
+
 \subsection{Planning of the Development Phases}
-\lips
+The development of the project will be conducted in four primary phases:
+
+\textbf{1. Data Acquisition and Initial Integration:} This initial phase focuses
+on acquiring, cleaning, and integrating historical dairy farm data into the
+system. Activities include:
+\begin{itemize}
+    \item Collecting and preprocessing datasets from CATTLEytics and Lactanet to
+    ensure data quality and consistency.
+    \item Developing scripts to handle data normalization, unit conversion
+    (e.g., to liters and kilograms), and encryption for compliance with PIPEDA.
+    \item Implementing an initial data pipeline to allow seamless integration
+    between the existing CATTLEytics system and the new module.
+\end{itemize}
+This phase will conclude with a Proof of Concept (POC) demonstration, where the
+pipeline and initial data handling capabilities will be validated.
+
+\textbf{2. Development of Predictive Model and Core Functionality:} The second
+phase is dedicated to developing and integrating the core machine learning model
+responsible for predicting key outcomes such as breeding success rates. This
+phase involves:
+\begin{itemize}
+    \item Experimenting with various algorithms (e.g., logistic regression,
+    decision trees, neural networks) using Python libraries such as
+    Scikit-learn, TensorFlow, or PyTorch to determine the most suitable approach
+    for our data.
+    \item Developing the model's training, validation, and testing processes,
+    ensuring the system is optimized for accuracy and performance.
+    \item Implementing backend APIs for data retrieval and model output
+    generation to support the frontend development in the next phase.
+\end{itemize}
+This phase will culminate with an evaluation of the model's initial accuracy and
+robustness, and any necessary refinements will be documented for the next
+sprint.
+
+\textbf{3. System Integration and Frontend Development:} In the third phase, the
+focus shifts to building the user-facing components and integrating the machine
+learning model into the existing CATTLEytics system. Activities include:
+\begin{itemize}
+    \item Developing a React-based frontend interface that allows farmers to
+    input data, visualize predictions, and interpret results in an intuitive
+    manner.
+    \item Implementing interactive visualizations using libraries like D3.js to
+    display herd health trends, genetic family trees, and predictive insights.
+    \item Integrating the frontend with the backend APIs, ensuring seamless data
+    flow and responsiveness across the system.
+    \item Initial system testing to verify that the user interface works well
+    with the machine learning outputs and data pipeline.
+\end{itemize}
+This phase will end with a functional demo of the frontend and backend
+integration, allowing for early user feedback and adjustments.
+
+\textbf{4. Testing, Deployment, and Refinement:} The final phase focuses on
+refining the system, conducting extensive testing, and preparing for deployment.
+Key activities include:
+\begin{itemize}
+    \item Performing unit, integration, and system-level testing to validate the
+    accuracy, performance, and reliability of the predictive model and frontend
+    interface.
+    \item Setting up a Continuous Integration/Continuous Deployment (CI/CD)
+    pipeline using GitHub Actions to automate testing and deployment to a
+    staging environment.
+    \item Conducting user testing sessions with industry stakeholders to gather
+    feedback, refine features, and enhance the usability of the system.
+    \item Finalizing user documentation, training materials, and preparing the
+    system for deployment to the production environment.
+\end{itemize}
+This phase will conclude with a complete system demonstration and the final
+handoff to stakeholders, ensuring the solution meets all requirements and is
+ready for the EXPO presentation.
+
+All phases will run concurrently with documentation development to meet capstone
+deliverables and ensure that non-functional requirements, such as performance
+and security, are integrated throughout the development process. Each phase will
+have some overlap to allow flexibility and responsiveness to evolving
+requirements.
+
 
 \section{Migration to the New Product}
 \subsection{Requirements for Migration to the New Product}
-\lips
+The new predictive module that is being developed for this project will need to
+be integrated into the existing CATTLEytics software. Key requirements include:
+\begin{itemize}
+    \item Ensuring compatibility of the new module with existing CATTLEytics
+    data formats and APIs.
+    \item Ensuring that the frontend interface seamlessly integrates with the
+    existing user interface of CATTLEytics.
+    \item Developing a rollback plan to ensure that, if issues occur during
+    migration, the system can revert to the previous stable state.
+    \item Testing the migration process on a staging environment to validate
+    functionality before deployment.
+\end{itemize}
+
 \subsection{Data That Has to be Modified or Translated for the New System}
-\lips
+This section will be completed once the relevant data model details are
+available.
 
 \section{Costs}
-\lips
+The goal for this project is to minimize costs by leveraging open-source tools
+and resources wherever possible. The primary development tools, including
+Python, TensorFlow, PyTorch, React, and GitHub for version control, are
+open-source and free to use. Continuous Integration will be managed through
+GitHub Actions, which offers a free tier suitable for our needs. 
+
+Any additional datasets needed from third-party providers (e.g., Lactanet) may
+incur small fees, but these will be minimized through the use of open or freely
+available datasets when possible. The team at CATTLEytics will provide access to
+a dataset that they have scraped from Lactanet.
+
+At this time, no other significant direct monetary costs are anticipated. The
+project plan remains flexible to adapt if unforeseen expenses arise during
+development, but the team will prioritize cost-effective and open-source
+solutions whenever feasible.
+
 \section{User Documentation and Training}
 \subsection{User Documentation Requirements}
-\lips
+The user documentation for the system will be concise and user-friendly, aimed
+at ensuring farmers and stakeholders can easily understand and utilize the tool.
+The documentation will include:
+\begin{itemize}
+  \item Step-by-step instructions on accessing and utilizing the platform.
+  \item Instructions on interpreting reports generated by the system.
+  \item A troubleshooting section to address common issues.
+\end{itemize}
+
 \subsection{Training Requirements}
-\lips
+No formal training will be required as the tool is designed to be intuitive and
+straightforward. The provided documentation will be sufficient for users to
+operate the system without additional assistance.
 
 \section{Waiting Room}
-\lips
+This section will be updated to highlight requirements that need to be put on
+hold due to time constraints or other factors.
 
 \section{Ideas for Solution}
 \lips
