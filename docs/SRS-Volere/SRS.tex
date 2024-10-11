@@ -1161,33 +1161,51 @@ No safety-critical requirements needed.
 
 \section{Cultural Requirements}
 \subsection{Cultural Requirements}
+\textbf{CR1: Language and Units}
 \begin{itemize}
-	\item The primary language for the product will be English, tailored
-	      specifically to Canadian dairy farmers. 
-	\item All data and measurements will follow Canadian standards, including the
-	      use of liters for milk production, kilograms for weight, and hectares
-	      for land area Other relevant units such as Celsius for temperature and
-	      metric tons for larger quantities may also be used
+    \item \textbf{Description}: The system must primarily use English for all
+    user interfaces and documentation. All data and measurements should follow
+    Canadian standards, including liters for milk production, kilograms for
+    weight, hectares for land area, Celsius for temperature, and metric tons for
+    large quantities.
+    \item \textbf{Rationale}: Using standardized language and units ensures the
+    product is accessible and relevant to Canadian dairy farmers and adheres to
+    local agricultural practices.
+    \item \textbf{Fit Criterion}: User interface testing must confirm that all
+    text appears in English, and data entries for milk, weight, temperature, and
+    land area are consistently displayed in the appropriate Canadian units.
 \end{itemize}
 
 \section{Compliance Requirements}
 \subsection{Legal Requirements}
+\textbf{LR1: Code of Practice for Dairy Cattle}
 \begin{itemize}
-	\item The project must comply with the
-	      \href{https://www.nfacc.ca/codes-of-practice/dairy-cattle}{Code of
-	      Practice for the Care and Handling of Dairy Cattle}, which is a
-	      government-regulated standard in Canada. This code outlines mandatory
-	      guidelines for the ethical treatment, health, and welfare of dairy
-	      cattle. Any management recommendations or actions suggested by the
-	      machine learning model will align with these regulations to ensure
-	      ethical practices in dairy farming.
-	        
-	\item The project must comply with
-	      \href{https://laws-lois.justice.gc.ca/pdf/p-8.6.pdf}{PIPEDA} (Personal
-	      Information Protection and Electronic Documents Act) for any personal
-	      information related to dairy farmers or other individuals involved. This
-	      includes the handling of contact details, financial information, and
-	      other personally identifiable data.
+    \item \textbf{Description}: The project must comply with the
+    \href{https://www.nfacc.ca/codes-of-practice/dairy-cattle}{Code of Practice
+    for the Care and Handling of Dairy Cattle}, a regulation by the Canadian
+    government for ethical treatment and welfare of dairy cattle.
+    \item \textbf{Rationale}: This code outlines the mandatory guidelines for
+    ensuring the health and welfare of dairy cattle in Canada. Any
+    recommendations or outputs from the machine learning model must align with
+    these regulations.
+    \item \textbf{Fit Criterion}: Testing must confirm that all suggested
+    management actions and predictions follow the guidelines outlined in the
+    Code of Practice, ensuring ethical treatment of the cattle.
+\end{itemize}
+
+\textbf{LR2: PIPEDA Compliance}
+\begin{itemize}
+    \item \textbf{Description}: The project must comply with
+    \href{https://laws-lois.justice.gc.ca/pdf/p-8.6.pdf}{PIPEDA} (Personal
+    Information Protection and Electronic Documents Act) when handling dairy
+    farmer information. This includes personal details like contact and
+    financial information.
+    \item \textbf{Rationale}: PIPEDA governs how personal information is
+    collected, stored, and shared, ensuring the privacy of individuals
+    associated with the project.
+    \item \textbf{Fit Criterion}: Testing must confirm that any dairy farmer
+    data is stored securely, access is restricted, and no personal data is
+    shared without consent, in full compliance with PIPEDA regulations.
 \end{itemize}
 \subsection{Standards Compliance Requirements}
 \begin{itemize}
