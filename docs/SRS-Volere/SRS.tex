@@ -830,28 +830,27 @@ This table outlines the core use cases currently identified for the product.
     users must be able to generate a prediction within 10 minutes.
 \end{itemize}
 \subsection{Personalization and Internationalization Requirements}
-\textbf{UHR3: Unit Customization}
+\textbf{UHR3: Metric Unit Standardization}
 \begin{itemize}
-    \item \textbf{Description}: The system should support switching between
-    metric and imperial units for both input and output data related to cow
-    metrics.
-    \item \textbf{Rationale}: Users may use different measurement systems, so
-    supporting unit customization ensures the system is applicable to a broader
-    audience and will prevent users from using incorrect inputs due to unit
-    mismatches.
-    \item \textbf{Fit Criterion}: Usability testing must show that at least
-    90\% of users can switch between units and see corresponding changes in
-    inputs/outputs.
+    \item \textbf{Description}: The system must support metric units exclusively
+    for both input and output data related to cow metrics.
+    \item \textbf{Rationale}: Standardizing to metric units ensures consistency
+    across the system, aligning with global scientific standards and reducing
+    the risk of incorrect inputs due to unit mismatches.
+    \item \textbf{Fit Criterion}: Usability testing must show that 100\% of
+    inputs and outputs are displayed in metric units, with no option for unit
+    customization.
 \end{itemize}
 \textbf{UHR4: Language Support}
 \begin{itemize}
-    \item \textbf{Description}: The system must offer support for English and
-    French, ensuring all text elements and documentation are fully translated.
-    \item \textbf{Rationale}: Offering English and French options makes the
-    system more accessible to all Canadians in Ontario, expanding its usability.
-    \item \textbf{Fit Criterion}: Usability testing must confirm that users can
-    switch between languages in under 5 seconds, and all UI elements and help
-    documentation must be fully translated with no missing text.
+    \item \textbf{Description}: The system must offer support for English as the
+    sole language for all text elements and documentation.
+    \item \textbf{Rationale}: Limiting the system to English simplifies
+    development and maintenance while ensuring broad accessibility within the
+    primary user base.
+    \item \textbf{Fit Criterion}: Usability testing must confirm that all UI
+    elements and documentation are fully in English with no untranslated or
+    missing text.
 \end{itemize}
 \subsection{Learning Requirements}
 \textbf{UHR5: User Proficiency}
@@ -867,7 +866,7 @@ This table outlines the core use cases currently identified for the product.
 \end{itemize}
 \textbf{UHR6: Quick Access to Help}
 \begin{itemize}
-    \item \textbf{Description}: he system must provide contextual help (e.g.,
+    \item \textbf{Description}: The system must provide contextual help (e.g.,
     tooltips or tutorials) that can be accessed within 15 seconds for key
     features.
     \item \textbf{Rationale}: Easy access to help reduces confusion and
@@ -979,18 +978,7 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Robustness or Fault-Tolerance Requirements}
-\textbf{PFR5: System Recovery From Failures}
-\begin{itemize}
-    \item \textbf{Description}: In the event of a system failure, the system
-    must be able to recover within 30 seconds and restore all data from the last
-    stable state.
-    \item \textbf{Rationale}: Fault tolerance ensures that users do not lose
-    data or progress due to system crashes, increasing system reliability.
-    \item \textbf{Fit Criterion}: Testing must demonstrate system recovery
-    within 30 seconds after simulated failures, with 100\% of data restored to
-    its last known state.
-\end{itemize}
-\textbf{PFR6: Graceful Handling of Invalid Inputs}
+\textbf{PFR5: Graceful Handling of Invalid Inputs}
 \begin{itemize}
     \item \textbf{Description}: The system must handle invalid inputs without
     crashing, providing clear feedback to the user and offering solutions to
@@ -1002,32 +990,12 @@ No safety-critical requirements needed.
     of invalid inputs are flagged, and appropriate error messages are displayed
     without causing system crashes.
 \end{itemize}
-\textbf{PFR7: Load Balancing for Heavy Traffic}
-\begin{itemize}
-    \item \textbf{Description}: The system must automatically distribute traffic
-    across servers in case of high load, ensuring stable performance for all
-    users.
-    \item \textbf{Rationale}: Robust load balancing prevents system downtime or
-    performance degradation during periods of heavy usage.
-    \item \textbf{Fit Criterion}: Load tests must demonstrate that the system
-    can handle spikes in traffic (up to 150\% of normal load) without response
-    times exceeding 10 seconds.
-\end{itemize}
 
 \subsection{Capacity Requirements}
-\textbf{PFR8: User Load Capacity}
-\begin{itemize}
-    \item \textbf{Description}: The system must be able to handle at least 500
-    concurrent users without performance degradation.
-    \item \textbf{Rationale}: Ensuring high capacity allows for scalability and
-    supports widespread adoption of the system by large user bases.
-    \item \textbf{Fit Criterion}: Load testing must confirm that the system can
-    support at least 500 concurrent users while maintaining prediction response
-    times of under 15 seconds.
-\end{itemize}
+\textit{No capacity requirements needed as of now. This may be updated in the future.}
 
 \subsection{Scalability or Extensibility Requirements}
-\textbf{PFR9: Modular Design}
+\textbf{PFR6: Modular Design}
 \begin{itemize}
     \item \textbf{Description}: The system’s architecture must be modular,
     allowing new features such as additional machine learning models, data
@@ -1039,7 +1007,7 @@ No safety-critical requirements needed.
     new features can be added or updated without affecting the core
     functionality of existing modules.
 \end{itemize}
-\textbf{PFR10: Vertical Scaling for Increased Demand}
+\textbf{PFR7: Vertical Scaling for Increased Demand}
 \begin{itemize}
     \item \textbf{Description}: The system must be able to scale vertically to
     handle increased demand by adding more computational resources without
@@ -1053,7 +1021,7 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Longevity Requirements}
-\textbf{PFR11: Code Maintainability}
+\textbf{PFR8: Code Maintainability}
 \begin{itemize}
     \item \textbf{Description}: The system’s codebase must be well-documented,
     following the set coding standards to ensure that it can be maintained and
@@ -1064,7 +1032,7 @@ No safety-critical requirements needed.
     that the code adheres to industry-standard practices and includes sufficient
     documentation for future maintainers.
 \end{itemize}
-\textbf{PFR12: Support for Future Technologies}
+\textbf{PFR9: Support for Future Technologies}
 \begin{itemize}
     \item \textbf{Description}: The system must be designed to support the
     integration of future technologies, including newer machine learning models
@@ -1094,21 +1062,10 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Wider Environment Requirements}
-\textbf{OER2: Sustainability in Hosting}
-\begin{itemize}
-    \item \textbf{Description}: The system’s cloud-based infrastructure must
-    prioritize sustainability, with at least 50\% of its hosting powered by
-    renewable energy sources.
-    \item \textbf{Rationale}: Environmental sustainability is a growing
-    priority, and using renewable energy sources can reduce the system’s carbon
-    footprint.
-    \item \textbf{Fit Criterion}: Hosting provider documentation must show that
-    at least 50\% of the energy used in hosting services comes from renewable
-    sources.
-\end{itemize}
+\textit{No wider environment requirements needed as of now. This may be updated in the future.}
 
 \subsection{Requirements for Interfacing with Adjacent Systems}
-\textbf{OER3: API Compatability with CATTLEytics}
+\textbf{OER2: API Compatability with CATTLEytics}
 \begin{itemize}
     \item \textbf{Description}: The system must provide a well-documented API to
     interface with CATTLEytics' existing application and third-party tools,
@@ -1120,7 +1077,7 @@ No safety-critical requirements needed.
     exchange with the CATTLEytics platform and third-party tools, with 100\% of
     test cases passing.
 \end{itemize}
-\textbf{OER4: Seamless Data Transfer}
+\textbf{OER3: Seamless Data Transfer}
 \begin{itemize}
     \item \textbf{Description}: The system must ensure that data transfers
     between the prediction model and adjacent systems are fault-tolerant, with
@@ -1134,7 +1091,7 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Productization Requirements}
-\textbf{OER5: Automated Updates}
+\textbf{OER4: Automated Updates}
 \begin{itemize}
     \item \textbf{Description}: The system must support automated updates,
     ensuring that all future software patches and improvements can be deployed
@@ -1148,7 +1105,7 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Release Requirements}
-\textbf{OER6: Testing and Revision Cycles}
+\textbf{OER5: Testing and Revision Cycles}
 \begin{itemize}
     \item \textbf{Description}: The system must undergo a formal testing phase,
     involving key stakeholders (e.g., farm operators, internal CATTLEytics team
@@ -1159,9 +1116,9 @@ No safety-critical requirements needed.
     overall product quality.
     \item \textbf{Fit Criterion}: Feedback from testers must be collected and
     analyzed, with all critical issues resolved before the final product
-    release. At least 10 users must be involved in this testing phase.
+    release. At least 5 users must be involved in this testing phase.
 \end{itemize}
-\textbf{OER7: Documentation for End Users and Developers}
+\textbf{OER6: Documentation for End Users and Developers}
 \begin{itemize}
     \item \textbf{Description}: The system must include comprehensive
     documentation for both end users (features, usage) and developers (API,
@@ -1173,7 +1130,7 @@ No safety-critical requirements needed.
     with at least 90\% of users and developers rating the documentation as
     “sufficient” or better in post-release surveys.
 \end{itemize}
-\textbf{OER8: Release Versioning and Rollback Support}
+\textbf{OER7: Release Versioning and Rollback Support}
 \begin{itemize}
     \item \textbf{Description}: Each system release must be versioned, with the
     ability to rollback to a previous stable version if critical issues arise
@@ -1367,30 +1324,7 @@ No safety-critical requirements needed.
 \end{itemize}
 
 \subsection{Immunity Requirements}
-\textbf{SCR10: Resilience Against Denial-of-Service (DoS) Attacks}
-\begin{itemize}
-    \item \textbf{Description}: The system must be resilient to 
-    denial-of-service (DoS) attacks, with automatic measures in place to 
-    mitigate the impact of such attacks.
-    \item \textbf{Rationale}: DoS attacks can disrupt system availability and
-    cause significant downtime, making resilience essential for maintaining
-    uninterrupted service.
-    \item \textbf{Fit Criterion}: Simulated DoS attacks must show that the
-    system remains available for 95\% of legitimate users, with automated
-    scaling or mitigation strategies successfully limiting the attack's impact.
-\end{itemize}
-\textbf{SCR11: Recovery From Cyberattacks}
-\begin{itemize}
-    \item \textbf{Description}: The system must have a defined recovery protocol
-    that ensures operations can be restored within 4 hours in the event of a
-    successful cyberattack.
-    \item \textbf{Rationale}: In case of a security breach, a fast recovery
-    process minimizes downtime and limits the damage caused by the attack.
-    \item \textbf{Fit Criterion}: Disaster recovery tests must confirm that the
-    system can be fully restored within 4 hours after a simulated breach, with
-    no loss of critical data.
-\end{itemize}
-
+\textit{No immunity requirements needed as of now. This may be updated in the future.}
 
 \section{Cultural Requirements}
 \subsection{Cultural Requirements}
