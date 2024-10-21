@@ -72,10 +72,69 @@ important library, these are also potential components.}
 
 \section{Critical Assumptions}
 
-\wss{These assumptions that are made about the software or system.  You should
-minimize the number of assumptions that remove potential hazards.  For instance,
-you could assume a part will never fail, but it is generally better to include
-this potential failure mode.}
+This section outlines the key assumptions made about the system and its 
+operating environment. These assumptions are intended to define the boundaries 
+of our hazard analysis and to manage potential risks.\\
+
+\textbf{Data Accuracy and Availability}
+\begin{itemize}
+    \item \textbf{Assumption:} The historical and real-time data provided to the 
+    machine learning model are accurate, complete, and relevant to the cows and 
+    their environment.
+    \item \textbf{Rationale:} The model's accuracy and reliability depend heavily 
+    on the quality of input data. Inaccurate or incomplete data could lead to 
+    faulty predictions and management decisions.
+    \item \textbf{Mitigation:} Implement data validation procedures to ensure 
+    the accuracy and completeness of incoming data.
+\end{itemize}
+
+\textbf{Stable Operating Conditions}
+\begin{itemize}
+    \item \textbf{Assumption:} The environmental and operational conditions on 
+    the farm (such as temperature, feed availability, and animal health 
+    monitoring) remain within expected ranges during the model's operation.
+    \item \textbf{Rationale:} Significant deviations in farm conditions could 
+    affect the model's performance, leading to inaccurate predictions.
+    \item \textbf{Mitigation:} Develop contingency measures or notification 
+    systems for when conditions fall outside normal ranges.
+\end{itemize}
+
+\textbf{Model Generalizability}
+\begin{itemize}
+    \item \textbf{Assumption:} The machine learning model generalizes well 
+    across different farms and herd conditions without needing extensive 
+    retraining for every farm.
+    \item \textbf{Rationale:} The model is intended to be a broadly applicable 
+    tool across multiple farms with varying conditions. Excessive reliance on 
+    farm-specific parameters would increase complexity and reduce scalability.
+    \item \textbf{Mitigation:} Incorporate regular model updates and feedback 
+    loops to address variability between different environments.
+\end{itemize}
+
+\textbf{Ethical Use and Compliance}
+\begin{itemize}
+    \item \textbf{Assumption:} Users will adhere to legal and ethical standards 
+    when implementing recommendations made by the tool, particularly regarding 
+    animal welfare and data privacy.
+    \item \textbf{Rationale:} Legal compliance (e.g., PIPEDA) and ethical 
+    considerations (animal welfare) are critical to ensuring the tool is used 
+    responsibly.
+    \item \textbf{Mitigation:} Provide user education and warnings for critical 
+    decisions that impact animal welfare, and ensure compliance with data privacy laws.
+\end{itemize}
+
+\textbf{Technical Infrastructure Reliability}
+\begin{itemize}
+    \item \textbf{Assumption:} The technical infrastructure (servers, farm 
+    management platforms, IoT devices) that supports the model operates 
+    reliably with minimal downtime or technical failures.
+    \item \textbf{Rationale:} System malfunctions or data transmission failures 
+    could lead to gaps in model predictions, causing delays in critical 
+    decision-making.
+    \item \textbf{Mitigation:} Implement fault-tolerance mechanisms and 
+    regular system health checks to ensure the infrastructure remains stable.
+\end{itemize}
+
 
 \section{Failure Mode and Effect Analysis}
 
