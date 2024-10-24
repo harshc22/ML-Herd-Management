@@ -90,13 +90,64 @@ documentation, and/or test cases.}
 
 \section{Safety and Security Requirements}
 
-\wss{Newly discovered requirements.  These should also be added to the SRS.  (A
-rationale design process how and why to fake it.)}
+\subsection{Safety Requirements}
+
+\textbf{SFR1: Prevent Inbreeding Between Sire and Dam} 
+\begin{itemize}
+    \item \textbf{Description}: The system must prevent inbreeding by detecting 
+    when a sire and dam are closely related and disallowing or flagging those 
+    breeding pairs. The system should calculate the relationship coefficient 
+    between breeding pairs and raise an alert if it exceeds a predefined 
+    threshold.
+    \item \textbf{Rationale}: Inbreeding increases the risk of genetic 
+    disorders, reduced fertility, and poor overall herd health. Preventing 
+    inbreeding ensures better genetic diversity and healthier offspring.
+    \item \textbf{Fit Criterion}: The system should compare genetic records of 
+    sires and dams, ensuring that no breeding pair with a relationship 
+    coefficient above a set threshold is approved. This value can currently set 
+    to 10\%, but will likely to re-evaluated later. A warning or error message 
+    must be displayed for all invalid breeding pairs, with 100\% accuracy in 
+    flagging related pairs during tests.
+\end{itemize}
+\vspace{10pt}
+
+\subsection{Security Requirements}
+
+\textbf{SCR1: Backup and Recovery Mechanism} 
+\begin{itemize}
+    \item \textbf{Description}: The system must regularly back up its data to 
+    ensure that critical information, such as local breeding data, developed models, and so forth are not lost in case of system failure or crash. It should also 
+    provide a reliable recovery mechanism to restore data after an incident.
+    \item \textbf{Rationale}: Data loss can lead to incorrect predictions, poor 
+    breeding decisions, and financial losses for farmers. A backup and recovery 
+    mechanism ensures that the system remains reliable and that users can 
+    recover from potential failures.
+    \item \textbf{Fit Criterion}: The system must successfully back up data 
+    every 24 hours, witmah at least 99\% success in restoring data during tests.
+\end{itemize}
+\vspace{10pt}
+
+\textbf{SCR2: Multi-Factor Authentication (MFA)} 
+\begin{itemize}
+    \item \textbf{Description}: The system must enforce multi-factor 
+    authentication for all administrative users to ensure secure access to 
+    sensitive data, such as genetic and breeding records. MFA should require 
+    users to authenticate using two or more credentials, such as passwords and 
+    authentication tokens.
+    \item \textbf{Rationale}: Sensitive data requires an additional layer of 
+    security to prevent unauthorized access. By using MFA, the risk of data 
+    breaches and unauthorized access is minimized.
+    \item \textbf{Fit Criterion}: MFA must be implemented and enforced for all 
+    administrative-level accounts, with at least 95\% of users successfully 
+    authenticating during tests.
+\end{itemize}
 
 \section{Roadmap}
 
-\wss{Which safety requirements will be implemented as part of the capstone timeline?
-Which requirements will be implemented in the future?}
+SFR1 will be included in the capstone timeline as it involves safety and 
+ethical concerns. It will be implemented when the system is being built. The 
+other safety concerns are not of high priority and will therefore may be 
+inlcuded if there is extra time.
 
 \newpage{}
 
@@ -120,3 +171,5 @@ Which requirements will be implemented in the future?}
 \end{enumerate}
 
 \end{document}
+
+
