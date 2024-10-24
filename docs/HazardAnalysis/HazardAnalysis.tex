@@ -76,6 +76,23 @@ This section outlines the key assumptions made about the system and its
 operating environment. These assumptions are intended to define the boundaries 
 and to manage potential risks.\\
 
+\textbf{Data Collection Limitations} 
+\begin{itemize} 
+    \item \textbf{Assumption:} All data used for model training and predictions 
+    will be sourced from existing datasets provided by CATTLEytics Inc. or 
+    relevant partners. No additional data collection will be undertaken by the 
+    project team. 
+    \item \textbf{Rationale:} The scope of the project does not include new data 
+    collection activities, limiting the system to work with available historical 
+    and provided real-time data. This constraint may limit the model's ability to 
+    adapt to emerging conditions not represented in the existing dataset. 
+    \item \textbf{Mitigation:} Ensure a comprehensive understanding of the provided 
+    dataset's limitations, and apply model validation techniques 
+    (such as cross-validation) to mitigate risks associated with potential 
+    biases or gaps in the data. Regular updates to the dataset from the provider 
+    should also be encouraged to keep the model relevant. 
+\end{itemize}
+
 \textbf{Data Accuracy and Availability}
 \begin{itemize}
     \item \textbf{Assumption:} The historical and real-time data provided to the 
